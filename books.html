@@ -1,0 +1,1494 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Where Do I Start? | MK-BOOKS · MentorK.Tech</title>
+<meta name="description" content="MK-BOOKS Book One: Where Do I Start? — a beginner's guide to finding your place in tech, by MentorK.Tech. Read it free online or download the PDF.">
+<meta property="og:title" content="Where Do I Start? | MK-BOOKS · MentorK.Tech">
+<meta property="og:description" content="A beginner's guide to finding your place in tech. Read free online.">
+<meta property="og:type" content="book">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  @page { size: 6in 9in; margin: 0; }
+  :root{
+    --navy:#0B1A3A; --deep:#061029; --blue:#1E6FFF; --sky:#4D8DFF; --pale:#E8F0FF;
+    --gold:#F5B400; --ink:#1B2233; --muted:#5B6474; --line:#D9E0EC; --bg:#FFFFFF; --soft:#F4F7FC;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#888}
+  body{font-family:'Inter',"Noto Sans",sans-serif;color:var(--ink);font-size:10.4pt;line-height:1.55}
+  .page{position:relative;width:6in;height:9in;background:var(--bg);overflow:hidden;page-break-after:always;break-after:page}
+  .page:last-child{page-break-after:auto}
+  .content{position:absolute;left:.62in;right:.62in;top:.6in;bottom:.72in}
+  footer{position:absolute;left:.62in;right:.62in;bottom:.38in;display:flex;justify-content:space-between;font-size:7.6pt;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;font-weight:500}
+  footer .num{font-family:'Poppins';font-weight:600;color:var(--blue)}
+  .dark footer{color:#9FB0D0}
+  .dark footer .num{color:var(--gold)}
+  h1,h2,h3,h4{font-family:'Poppins',sans-serif;margin:0;line-height:1.2}
+  h2{font-size:17pt;font-weight:700;color:var(--navy);margin-bottom:8pt}
+  h3{font-size:12pt;font-weight:600;color:var(--blue);margin:12pt 0 4pt}
+  h4{font-size:10.4pt;font-weight:600;color:var(--navy);margin:8pt 0 2pt}
+  p{margin:0 0 7pt}
+  ul,ol{margin:0 0 7pt;padding-left:16pt}
+  li{margin-bottom:3pt}
+  strong{font-weight:600;color:var(--navy)}
+  .kicker{font-family:'Poppins';font-size:8pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:6pt}
+  .lead{font-size:11.2pt;color:var(--navy);font-weight:500}
+  .rule{height:2pt;width:36pt;background:var(--gold);margin:6pt 0 12pt;border-radius:2pt}
+  .box{background:var(--soft);border-left:3pt solid var(--blue);padding:8pt 10pt;border-radius:0 6pt 6pt 0;margin:8pt 0;font-size:9.6pt}
+  .box.gold{border-left-color:var(--gold);background:#FFF8E5}
+  .box .t{font-family:'Poppins';font-weight:600;color:var(--navy);font-size:9.4pt;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3pt}
+  .box p:last-child{margin-bottom:0}
+  table{width:100%;border-collapse:collapse;font-size:8.8pt;margin:5pt 0 8pt}
+  th{font-family:'Poppins';font-weight:600;font-size:8.2pt;text-align:left;background:var(--navy);color:#fff;padding:5pt 6pt;letter-spacing:.04em}
+  td{padding:4pt 6pt;border-bottom:1pt solid var(--line);vertical-align:top}
+  tr:nth-child(even) td{background:var(--soft)}
+  td.k{font-weight:600;color:var(--navy);white-space:nowrap}
+  code,.mono{font-family:'JetBrains Mono',monospace;font-size:8.6pt;background:var(--pale);color:var(--navy);padding:0 3pt;border-radius:3pt}
+  .check li{list-style:none;position:relative;padding-left:16pt}
+  .check li::before{content:"";position:absolute;left:0;top:3pt;width:9pt;height:9pt;border:1.4pt solid var(--blue);border-radius:2pt}
+  .steps{counter-reset:s;list-style:none;padding:0}
+  .steps li{counter-increment:s;position:relative;padding-left:26pt;margin-bottom:6pt}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:1pt;width:18pt;height:18pt;border-radius:50%;background:var(--blue);color:#fff;font-family:'Poppins';font-weight:700;font-size:9pt;text-align:center;line-height:18pt}
+  .stage{border:1pt solid var(--line);border-radius:6pt;padding:7pt 9pt;margin-bottom:7pt}
+  .stage .t{font-family:'Poppins';font-weight:600;color:var(--navy);font-size:9.8pt}
+  .stage .t span{color:var(--blue);margin-right:5pt}
+  .stage p, .stage ul{font-size:9.4pt;margin-bottom:2pt}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:10pt}
+  .tag{display:inline-block;font-family:'Poppins';font-size:7.6pt;font-weight:600;padding:2pt 6pt;border-radius:10pt;background:var(--pale);color:var(--navy);margin:0 3pt 3pt 0}
+  .small{font-size:8.8pt;color:var(--muted)}
+  /* dark pages */
+  .dark{background:var(--navy);color:#DCE5F5}
+  .dark h2,.dark h3,.dark strong{color:#fff}
+  .dark .kicker{color:var(--gold)}
+  /* chapter opener */
+  .opener .bignum{font-family:'Poppins';font-weight:800;font-size:96pt;line-height:.9;color:var(--blue);opacity:.9;margin-left:-4pt}
+  .opener h2{font-size:26pt;font-weight:700;color:#fff;margin:8pt 0 6pt}
+  .opener .tagline{font-family:'Poppins';font-weight:500;font-size:12pt;color:var(--gold);margin-bottom:16pt}
+  .opener .plain{background:rgba(255,255,255,.06);border:1pt solid rgba(255,255,255,.14);border-radius:8pt;padding:12pt 14pt;font-size:10.4pt}
+  .opener .plain .t{font-family:'Poppins';font-size:8pt;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:5pt}
+  .opener .glance{margin-top:14pt;font-size:9.4pt}
+  .opener .glance div{display:flex;gap:8pt;padding:4pt 0;border-top:1pt solid rgba(255,255,255,.12)}
+  .opener .glance b{color:#fff;min-width:88pt;font-weight:600}
+  /* part opener */
+  .part .content{display:flex;flex-direction:column;justify-content:center}
+  .part .kicker{font-size:10pt}
+  .part h2{font-size:30pt;color:#fff;line-height:1.1;margin:6pt 0 12pt}
+  .part p{font-size:11pt;color:#C8D3EA;max-width:3.9in}
+  /* TOC */
+  .toc{list-style:none;padding:0;margin:0}
+  .toc li{display:flex;align-items:baseline;gap:6pt;padding:2.2pt 0;border-bottom:1pt dotted var(--line);font-size:9.2pt}
+  .toc li.part{border:none;padding-top:7pt;font-family:'Poppins';font-weight:600;color:var(--blue);font-size:8.4pt;letter-spacing:.12em;text-transform:uppercase}
+  .toc .n{color:var(--blue);font-family:'Poppins';font-weight:600;min-width:20pt}
+  .toc .l{flex:1}
+  .toc .pg{font-family:'Poppins';font-weight:600;color:var(--navy)}
+  /* covers */
+  .cover{background:linear-gradient(160deg,#061029 0%,#0B1A3A 55%,#0F2C6B 100%)}
+  .cover .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:.5in .5in}
+  .cover .glow{position:absolute;width:5in;height:5in;border-radius:50%;background:radial-gradient(circle,rgba(30,111,255,.45),transparent 62%);right:-2in;top:-1.6in}
+  .cover .glow2{position:absolute;width:4in;height:4in;border-radius:50%;background:radial-gradient(circle,rgba(245,180,0,.22),transparent 62%);left:-1.8in;bottom:-1.2in}
+  .cover .logo{position:absolute;top:.55in;left:.6in;display:flex;align-items:center;gap:8pt}
+  .cover .logo img{width:.62in;height:.62in;border-radius:8pt;object-fit:cover}
+  .cover .logo span{font-family:'Poppins';font-weight:700;color:#fff;font-size:12pt;letter-spacing:.02em}
+  .cover .series{position:absolute;top:1.55in;left:.6in;font-family:'Poppins';font-size:8.4pt;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+  .cover h1{position:absolute;top:1.9in;left:.6in;right:.6in;font-size:44pt;font-weight:800;color:#fff;line-height:1.02;letter-spacing:-.01em}
+  .cover .sub{position:absolute;top:4.35in;left:.6in;right:.7in;font-family:'Poppins';font-weight:500;font-size:13pt;color:#BFD2FF;line-height:1.35}
+  .cover .fields{position:absolute;top:5.55in;left:.6in;right:.6in;display:flex;flex-wrap:wrap;gap:5pt}
+  .cover .fields span{font-family:'Poppins';font-size:7.8pt;font-weight:600;color:#fff;border:1pt solid rgba(255,255,255,.35);border-radius:12pt;padding:3pt 8pt}
+  .cover .bottom{position:absolute;bottom:.55in;left:.6in;right:.6in;display:flex;justify-content:space-between;align-items:flex-end}
+  .cover .bottom .brand{font-family:'Poppins';font-weight:700;color:#fff;font-size:11pt}
+  .cover .bottom .brand small{display:block;font-family:'Inter';font-weight:500;font-size:7.6pt;color:#9FB0D0;letter-spacing:.08em;text-transform:uppercase;margin-top:2pt}
+  .cover .bottom .tag2{font-family:'Poppins';font-size:8pt;color:var(--gold);font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+  /* back cover */
+  .back .blurb{position:absolute;top:.75in;left:.62in;right:.62in}
+  .back .blurb h2{color:#fff;font-size:18pt;margin-bottom:10pt}
+  .back .blurb p{color:#C8D3EA;font-size:10.2pt}
+  .back .services{position:absolute;top:4.55in;left:.62in;right:.62in;display:grid;grid-template-columns:1fr 1fr;gap:8pt}
+  .back .services div{background:rgba(255,255,255,.06);border:1pt solid rgba(255,255,255,.14);border-radius:8pt;padding:8pt 10pt;font-size:8.8pt;color:#DCE5F5}
+  .back .services b{display:block;font-family:'Poppins';color:var(--gold);font-size:9pt;margin-bottom:2pt}
+  .back .contact{position:absolute;bottom:.55in;left:.62in;right:.62in;display:flex;justify-content:space-between;align-items:flex-end}
+  .back .contact .c{font-size:9pt;color:#DCE5F5}
+  .back .contact .c b{display:block;font-family:'Poppins';color:#fff;font-size:10pt;margin-bottom:2pt}
+  .back .contact img{width:.9in;height:.9in;border-radius:10pt;object-fit:cover}
+  /* founder page */
+  .founder .content{top:.5in}
+  .founder .photo{width:100%;height:3.6in;object-fit:cover;object-position:center 30%;border-radius:10pt;filter:grayscale(1) contrast(1.05)}
+  .founder .caption{font-family:'Poppins';font-size:8pt;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:10pt 0 4pt}
+  .founder h2{color:#fff;font-size:16pt}
+  .founder p{font-size:9.8pt;color:#DCE5F5}
+  /* comparison */
+  .cmp td{font-size:8.4pt}
+  .cmp th{font-size:7.8pt}
+  /* quiz */
+  .q{margin-bottom:7pt;font-size:9.6pt}
+  .q b{display:block;color:var(--navy)}
+  .q span{display:block;padding-left:12pt;color:var(--ink)}
+  .score{display:grid;grid-template-columns:auto 1fr;gap:3pt 10pt;font-size:9.4pt}
+  .score b{color:var(--blue);font-family:'Poppins'}
+  /* glossary */
+  .gi{margin-bottom:4pt;font-size:9.2pt}
+  .gi b{display:block;font-weight:600;color:var(--navy);font-size:9.6pt}
+  /* map diagram */
+  .map{display:grid;grid-template-columns:1fr 1fr;gap:7pt;margin-top:6pt}
+  .map div{border:1pt solid var(--line);border-top:3pt solid var(--blue);border-radius:6pt;padding:6pt 8pt;font-size:8.8pt}
+  .map div b{display:block;font-family:'Poppins';color:var(--navy);font-size:9.4pt;margin-bottom:2pt}
+  .map div.g{border-top-color:var(--gold)}
+  a{color:var(--blue);text-decoration:none;font-weight:600}
+  .dark a{color:var(--gold)}
+  .overflow{outline:4pt solid red}
+</style>
+
+<style media="screen">
+  /* On-screen reader layout (print/PDF layout above is untouched) */
+  html{background:#0B1A3A}
+  body{background:radial-gradient(1200px 600px at 50% -10%,#16306b 0%,#0B1A3A 60%);padding:84px 0 60px}
+  .reader-bar{position:fixed;top:0;left:0;right:0;z-index:50;height:60px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 max(16px,calc((100vw - 1100px)/2));background:rgba(6,16,41,.85);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08);font-family:'Poppins',sans-serif}
+  .reader-bar a{color:#fff;text-decoration:none;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+  .reader-bar .back{color:#9FB0D0}
+  .reader-bar .back:hover{color:#fff}
+  .reader-bar .mid{color:#F5B400;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+  .reader-bar .dl{background:#1E6FFF;padding:9px 16px;border-radius:100px;font-size:12px}
+  .reader-bar .dl:hover{background:#4D8DFF}
+  #book{width:6in;margin:0 auto}
+  .page{margin:0 0 28px;box-shadow:0 24px 60px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.06);border-radius:3px}
+  @media(max-width:640px){.reader-bar .mid{display:none}body{padding-top:76px}}
+</style>
+<style media="print">.reader-bar{display:none}#book{width:auto;margin:0}.page{margin:0;box-shadow:none;border-radius:0}</style>
+</head>
+<body>
+<div class="reader-bar"><a class="back" href="/">← Back to MentorK.Tech</a><span class="mid">MK-Books · Beginner Series · Book One</span><a class="dl" href="assets/books/Where-Do-I-Start-MentorK-Tech.pdf" download>Download PDF ↓</a></div>
+<div id="book">
+
+<!-- ============ FRONT COVER ============ -->
+<section class="page cover nonum">
+  <div class="grid"></div><div class="glow"></div><div class="glow2"></div>
+  <div class="logo"><img src="assets/book/logo-dark.jpg" alt="MK"><span>MentorK.Tech</span></div>
+  <div class="series">The MentorK.Tech Beginner Series · Book One</div>
+  <h1>Where<br>Do I<br>Start?</h1>
+  <div class="sub">A beginner's guide to finding your place in tech — the fields, the tools, the languages, and the first steps.</div>
+  <div class="fields">
+    <span>Software Development</span><span>AI &amp; Machine Learning</span><span>Cybersecurity</span><span>Data Science</span><span>Cloud &amp; DevOps</span><span>UI/UX</span><span>Front-End</span><span>Back-End</span><span>Networking &amp; Hardware</span>
+  </div>
+  <div class="bottom">
+    <div class="brand">Oladiti Kunle B.E (MentorK)<small>Founder &amp; CEO · MentorK.Tech</small></div>
+    <div class="tag2">Learn it · Build it · Launch it</div>
+  </div>
+</section>
+
+<!-- ============ TITLE PAGE ============ -->
+<section class="page nonum">
+  <div class="content" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
+    <img src="assets/book/logo-light.jpg" alt="MK logo" style="width:1.3in;height:1.3in;object-fit:cover;margin-bottom:18pt">
+    <div class="kicker">The MentorK.Tech Beginner Series · Book One</div>
+    <h1 style="font-size:30pt;font-weight:800;color:var(--navy);margin:6pt 0">Where Do I Start?</h1>
+    <div class="rule" style="margin:10pt auto 12pt"></div>
+    <p class="lead" style="max-width:3.8in">A beginner's guide to finding your place in tech</p>
+    <p class="small" style="margin-top:40pt">MentorK.Tech<br>Technology · Creativity · Innovation</p>
+  </div>
+</section>
+
+<!-- ============ IMPRINT ============ -->
+<section class="page nonum">
+  <div class="content" style="display:flex;flex-direction:column;justify-content:flex-end">
+    <p class="small"><strong>Where Do I Start?</strong><br>A Beginner's Guide to Finding Your Place in Tech<br>The MentorK.Tech Beginner Series, Book One</p>
+    <p class="small">Written by Oladiti Kunle B.E (MentorK), Founder &amp; CEO of MentorK.Tech.<br>First edition, 2026. Published by MentorK.Tech.</p>
+    <p class="small">Copyright © 2026 MentorK.Tech. All rights reserved. No part of this book may be reproduced, stored, or transmitted in any form without written permission from the publisher, except for brief quotations in reviews or for personal study.</p>
+    <p class="small">Product names, tools, and platforms mentioned in this book are trademarks of their respective owners and are referenced for educational purposes only. Tool popularity and job-market details change quickly; always check current sources before making major decisions.</p>
+    <p class="small">MentorK.Tech — We Train. We Mentor. We Build Futures.<br>Website: <a href="https://mentork-tech-website.vercel.app">mentork-tech-website.vercel.app</a><br>WhatsApp: +234 705 777 9214 · +234 704 797 2890</p>
+  </div>
+</section>
+
+<!-- ============ CONTENTS ============ -->
+<section class="page toc-page">
+  <div class="content">
+    <div class="kicker">Inside this book</div>
+    <h2>Contents</h2>
+    <div class="rule"></div>
+    <ul class="toc">
+      <li><span class="n"></span><span class="l">A Word from MentorK.Tech</span><span class="pg" data-for="welcome"></span></li>
+      <li><span class="n"></span><span class="l">How to Use This Book</span><span class="pg" data-for="howto"></span></li>
+      <li class="part">Part One — Before You Choose</li>
+      <li><span class="n">1</span><span class="l">You Belong in Tech</span><span class="pg" data-for="ch1"></span></li>
+      <li><span class="n">2</span><span class="l">The Map of Tech</span><span class="pg" data-for="ch2"></span></li>
+      <li class="part">Part Two — The Fields</li>
+      <li><span class="n">3</span><span class="l">Software Development &amp; Engineering</span><span class="pg" data-for="ch3"></span></li>
+      <li><span class="n">4</span><span class="l">Artificial Intelligence &amp; Machine Learning</span><span class="pg" data-for="ch4"></span></li>
+      <li><span class="n">5</span><span class="l">Cybersecurity</span><span class="pg" data-for="ch5"></span></li>
+      <li><span class="n">6</span><span class="l">Data Science</span><span class="pg" data-for="ch6"></span></li>
+      <li><span class="n">7</span><span class="l">Cloud, Systems &amp; DevOps</span><span class="pg" data-for="ch7"></span></li>
+      <li><span class="n">8</span><span class="l">The Web Stack: UI/UX, Front-End &amp; Back-End</span><span class="pg" data-for="ch8"></span></li>
+      <li><span class="n">9</span><span class="l">Networking, Hardware &amp; IT Support</span><span class="pg" data-for="ch9"></span></li>
+      <li class="part">Part Three — Choosing and Starting</li>
+      <li><span class="n">10</span><span class="l">The Master Comparison</span><span class="pg" data-for="ch10"></span></li>
+      <li><span class="n">11</span><span class="l">Find Your Fit: A Self-Check</span><span class="pg" data-for="ch11"></span></li>
+      <li><span class="n">12</span><span class="l">Your First 30 Days</span><span class="pg" data-for="ch12"></span></li>
+      <li><span class="n">13</span><span class="l">Mistakes Beginners Make (and How to Avoid Them)</span><span class="pg" data-for="ch13"></span></li>
+      <li><span class="n"></span><span class="l">Glossary: Words You Will Hear</span><span class="pg" data-for="glossary"></span></li>
+      <li><span class="n"></span><span class="l">Learn It. Build It. Launch It. — with MentorK.Tech</span><span class="pg" data-for="next"></span></li>
+      <li><span class="n"></span><span class="l">About the Founder</span><span class="pg" data-for="founder"></span></li>
+    </ul>
+  </div>
+  <footer><span>Where Do I Start?</span><span class="num"></span></footer>
+</section>
+
+<!-- ============ WELCOME ============ -->
+<section class="page" id="welcome">
+  <div class="content">
+    <div class="kicker">Welcome</div>
+    <h2>A Word from MentorK.Tech</h2>
+    <div class="rule"></div>
+    <p class="lead">If you have ever typed "how do I get into tech" into a search bar and closed the tab feeling more confused than when you opened it, this book was written for you.</p>
+    <p>Every week, people message us with the same question in different words. "I want to learn tech but I don't know where to start." "Should I do coding or design?" "Is data science the same as data analysis?" "Everyone is talking about AI — do I need maths?" "I've watched fifty videos and still haven't started anything."</p>
+    <p>The problem is rarely a lack of information. The real problem is that nobody hands beginners a <strong>map</strong>. Without a map, every path looks equally scary, and the easiest choice becomes no choice at all.</p>
+    <p>This book is that map. It walks you through the major fields in technology one by one, in plain English, and tells you honestly what people in each field do all day, which tools they open in the morning, which programming languages they speak, and how a complete beginner takes the first steps. At the end, you will compare the fields side by side, answer a short self-check, and leave with a 30-day starting plan.</p>
+    <p>At MentorK.Tech we train, we mentor, and we build. We have watched people who "were not computer people" become confident developers, designers, analysts, and network engineers. The difference was never talent. It was a clear starting point and someone to walk alongside them. Consider this book the starting point. We would be glad to be the ones walking alongside you.</p>
+    <p style="margin-top:14pt"><strong>The MentorK.Tech Team</strong><br><span class="small">We Train. We Mentor. We Build Futures.</span></p>
+  </div>
+  <footer><span>Where Do I Start?</span><span class="num"></span></footer>
+</section>
+
+<!-- ============ HOW TO USE ============ -->
+<section class="page" id="howto">
+  <div class="content">
+    <div class="kicker">Read this first</div>
+    <h2>How to Use This Book</h2>
+    <div class="rule"></div>
+    <h3 style="margin-top:4pt">Part One — Before You Choose</h3>
+    <p>Two short chapters that clear away the myths ("I'm too old", "I'm bad at maths") and show you the whole landscape of tech in one picture.</p>
+    <h3>Part Two — The Fields</h3>
+    <p>Seven chapters, one per field, all following the same pattern:</p>
+    <ul>
+      <li><strong>In plain English</strong> — what the field is, explained to someone with zero background.</li>
+      <li><strong>What they actually do</strong> — a realistic picture of the daily work and the job titles you will see.</li>
+      <li><strong>Core tools, explained</strong> — the software professionals use, and what it is for.</li>
+      <li><strong>The languages</strong> — which programming languages matter here and why.</li>
+      <li><strong>Is this for you?</strong> — a short checklist of signs that you would enjoy the field.</li>
+      <li><strong>Beginner roadmap</strong> — three stages from absolute zero to your first real project.</li>
+    </ul>
+    <h3>Part Three — Choosing and Starting</h3>
+    <p>A one-page comparison of every field, a self-check to find your fit, a 30-day plan for any field, and the mistakes beginners make so you can skip them.</p>
+    <div class="box gold">
+      <div class="t">A suggestion</div>
+      <p>Keep a notebook open while you read. Each time a sentence makes you think "that sounds like me", write it down with the chapter number. By the end of Part Two, your notebook will be pointing at your answer. Words in <strong>bold</strong> are defined in the Glossary at the back.</p>
+    </div>
+  </div>
+  <footer><span>Where Do I Start?</span><span class="num"></span></footer>
+</section>
+
+<!-- ============ PART ONE ============ -->
+<section class="page dark part nonum">
+  <div class="content">
+    <div class="kicker">Part One</div>
+    <h2>Before You Choose</h2>
+    <p>Two things stop most beginners before they begin: believing they are not "the type", and not being able to see the whole picture. Let's fix both.</p>
+  </div>
+</section>
+
+<!-- CH1 -->
+<section class="page" id="ch1">
+  <div class="content">
+    <div class="kicker">Chapter 1</div>
+    <h2>You Belong in Tech</h2>
+    <div class="rule"></div>
+    <p class="lead">Before we talk about fields and tools, we need to deal with the voice in your head that says tech is for other people.</p>
+    <p>Almost everyone we have mentored arrived carrying at least one of the myths below. None of them survived the first month of real learning. Read them, recognise yours, and let it go.</p>
+    <h3>Myth 1: "I need to be a maths genius."</h3>
+    <p>Most tech jobs use far less maths than people fear. A front-end developer, a UI/UX designer, a network engineer, or a cybersecurity analyst can go years without solving an equation. Only a few specialised areas, like machine learning research, lean heavily on mathematics — and even there, you learn it as you go, with tools doing the heavy lifting. What you do need is <strong>logical thinking</strong>: the ability to break a problem into steps. That is a skill, and skills are learned.</p>
+    <h3>Myth 2: "I'm too old / too young / started too late."</h3>
+    <p>People switch into tech at 17 and at 47. Employers and clients care about what you can build, not when you were born. A 35-year-old accountant who learns data analysis actually has an advantage: years of understanding what the numbers mean.</p>
+    <h3>Myth 3: "I need an expensive laptop."</h3>
+    <p>For almost every field in this book, a basic laptop that can run a web browser and a text editor is enough to start. Many tools run entirely inside the browser. You can learn UI/UX design, web development, data analysis, and networking basics on a modest machine. Upgrade later, when you know what you need.</p>
+    <h3>Myth 4: "I need a computer science degree."</h3>
+    <p>A degree helps, but the tech industry is unusually open to people who can show their work. A portfolio of real projects, a GitHub profile, or a well-made app will get you past doors that a certificate alone will not. Many of the best people in the industry are self-taught or mentor-taught.</p>
+    <h3>Myth 5: "I'm not a computer person."</h3>
+    <p>Nobody is born a computer person. Everybody who is one today was once staring at a screen, confused. Tech is not a personality type; it is a collection of learnable skills, and different fields reward very different personalities. Some are for people who love visuals. Some are for people who love puzzles. Some are for people who love order and systems. Some are for people who love helping others. There is room for you.</p>
+    <h3>Myth 6: "I have to pick the perfect field now."</h3>
+    <p>You do not. Fields in tech overlap enormously. A front-end developer who learns databases becomes a full-stack developer. A data analyst who learns Python drifts into data science. A network engineer who studies attacks becomes a security professional. Your first choice is a <strong>starting point</strong>, not a life sentence. The goal of this book is to help you choose a good starting point quickly, so you can begin, and then adjust as you learn what you enjoy.</p>
+    <h3>Myth 7: "I watched the videos, so I'm learning."</h3>
+    <p>Watching is not learning. Doing is learning. If you have watched ten hours of tutorials and built nothing, you have not started yet. The good news: the moment you build something tiny — a one-page website, a spreadsheet dashboard, a small script — you will learn more than in all those hours of watching combined.</p>
+    <div class="box">
+      <div class="t">What you actually need</div>
+      <ul style="margin-bottom:0">
+        <li><strong>Curiosity</strong> — the willingness to ask "how does this work?"</li>
+        <li><strong>Patience</strong> — things break; fixing them is the job, not a sign of failure.</li>
+        <li><strong>Consistency</strong> — one hour every day beats ten hours once a month.</li>
+        <li><strong>A starting point</strong> — which is what the rest of this book gives you.</li>
+      </ul>
+    </div>
+    <h3>A promise before you turn the page</h3>
+    <p>Every chapter ahead will speak to you plainly. When a technical word appears, it will be explained. When a tool is named, you will be told what it is for. You are not expected to know anything yet. That is the whole point.</p>
+  </div>
+  <footer><span>Chapter 1 · You Belong in Tech</span><span class="num"></span></footer>
+</section>
+
+<!-- CH2 -->
+<section class="page" id="ch2">
+  <div class="content">
+    <div class="kicker">Chapter 2</div>
+    <h2>The Map of Tech</h2>
+    <div class="rule"></div>
+    <p class="lead">"Tech" is not one job. It is a whole city with different neighbourhoods. Here is the city from above.</p>
+    <p>Think about what happens when you open a banking app on your phone and send money to a friend. In those few seconds, almost every field in this book was involved:</p>
+    <ul>
+      <li>A <strong>UI/UX designer</strong> decided where the buttons go and how the screens flow.</li>
+      <li>A <strong>front-end / mobile developer</strong> built the screens you tap.</li>
+      <li>A <strong>back-end developer</strong> wrote the code that checks your balance and moves the money.</li>
+      <li>A <strong>cloud engineer</strong> keeps your account records safe and available 24/7.</li>
+      <li>A <strong>DevOps engineer</strong> shipped the app update without breaking anything.</li>
+      <li>A <strong>cybersecurity analyst</strong> is watching for fraud and attacks in the background.</li>
+      <li>A <strong>data scientist</strong> built the model that flagged whether this transfer looks suspicious.</li>
+      <li>A <strong>network engineer</strong> keeps your phone connected to the bank.</li>
+      <li>An <strong>AI engineer</strong> trained the chatbot you talk to when something goes wrong.</li>
+    </ul>
+    <p>Every one of these people is "in tech", yet most would struggle to do each other's jobs. That is why "learn tech" is not a plan — but "learn front-end development" is.</p>
+    <div class="box gold">
+      <div class="t">The big idea</div>
+      <p>Tech fields are defined by <strong>what problem they solve</strong>, not by how hard they are. Pick the problem you find interesting, and the field follows.</p>
+    </div>
+    <h3>The nine neighbourhoods</h3>
+        <div class="map">
+      <div><b>Software Development</b>Builds apps and programs for phones, desktops, and the web. <em>"Make the thing work."</em></div>
+      <div><b>AI &amp; Machine Learning</b>Teaches computers to learn from data and make decisions. <em>"Make the thing smart."</em></div>
+      <div><b>Cybersecurity</b>Defends systems and data from attackers. <em>"Keep the thing safe."</em></div>
+      <div><b>Data Science</b>Turns raw data into insights and predictions. <em>"Make the numbers talk."</em></div>
+      <div><b>Cloud &amp; DevOps</b>Runs and delivers software reliably at scale. <em>"Keep the thing running."</em></div>
+      <div><b>UI/UX Design</b>Plans how products look and feel to use. <em>"Make the thing usable."</em></div>
+      <div><b>Front-End Development</b>Codes the screens people see and touch. <em>"Build what the user sees."</em></div>
+      <div><b>Back-End Development</b>Codes the logic, servers, and databases behind the screens. <em>"Build what the user doesn't see."</em></div>
+      <div class="g"><b>Networking, Hardware &amp; IT Support</b>Keeps computers, cables, and connections working. <em>"Keep the lights on."</em></div>
+      <div class="g" style="border-top-color:var(--navy)"><b>Where they meet</b>Fields overlap. Full-stack = front + back. MLOps = AI + DevOps. Your path can cross borders.</div>
+    </div>
+  </div>
+  <footer><span>Chapter 2 · The Map of Tech</span><span class="num"></span></footer>
+</section>
+
+<!-- ============ PART TWO ============ -->
+<section class="page dark part nonum">
+  <div class="content">
+    <div class="kicker">Part Two</div>
+    <h2>The Fields</h2>
+    <p>Seven chapters, seven neighbourhoods. Each one explained from zero: what it is, what the work looks like, the tools, the languages, whether it fits you, and how to take the first steps.</p>
+    <p style="margin-top:14pt">As you read each one, ask yourself three questions:<br><strong>Do I like the problem?</strong> Would I be happy thinking about this all day?<br><strong>Do I like the work?</strong> Visual, logical, investigative, or systematic — which am I?<br><strong>Can I start this week?</strong> Every field has a free entry point; the roadmap shows it.</p>
+  </div>
+</section>
+
+<!-- ============ CH3 SOFTWARE DEV ============ -->
+<section class="page dark opener" id="ch3">
+  <div class="content">
+    <div class="kicker">Chapter 3</div>
+    <div class="bignum">03</div>
+    <h2>Software Development &amp; Engineering</h2>
+    <div class="tagline">"Make the thing work."</div>
+    <div class="plain">
+      <div class="t">In plain English</div>
+      Software developers write the instructions that make computers, phones, and websites do useful things. Every app on your phone, every program on a laptop, every website you visit — someone wrote it, line by line. Software development is the craft of designing those instructions, writing them, testing them, and keeping them working as the world changes.
+    </div>
+    <div class="glance">
+      <div><b>You'll enjoy it if</b><span>you like building things and seeing them work</span></div>
+      <div><b>Main languages</b><span>Python, JavaScript/TypeScript, Java, C#, C++, Kotlin, Swift</span></div>
+      <div><b>Signature tools</b><span>VS Code, Git &amp; GitHub, Docker, Jira</span></div>
+      <div><b>Time to first project</b><span>2–4 weeks with daily practice</span></div>
+    </div>
+  </div>
+  <footer><span>Chapter 3 · Software Development</span><span class="num"></span></footer>
+</section>
+
+<section class="page">
+  <div class="content">
+    <h3 style="margin-top:0">What they actually do</h3>
+    <p>A software developer's job is to <strong>translate a human need into working software</strong>. Someone says "our customers should be able to book an appointment from their phone", and the developer turns that sentence into an app that does exactly that — reliably, quickly, and without losing anyone's data.</p>
+    <p>A typical day looks less like a movie hacker scene and more like this:</p>
+    <ul>
+      <li><strong>Reading and planning.</strong> Understanding what needs to be built, and breaking it into small tasks.</li>
+      <li><strong>Writing code.</strong> Adding new features, one small piece at a time.</li>
+      <li><strong>Testing.</strong> Checking the code works — and, importantly, checking what happens when a user does something unexpected.</li>
+      <li><strong>Fixing bugs.</strong> A bug is a mistake in the code. Finding and fixing them is a large part of the job and is genuinely satisfying once you get the hang of it.</li>
+      <li><strong>Reviewing.</strong> Reading teammates' code and having yours read. This is how teams keep quality high and how juniors learn fastest.</li>
+      <li><strong>Collaborating.</strong> Short meetings with designers, testers, and product managers to stay aligned.</li>
+    </ul>
+    <h3>Job titles you will see</h3>
+    <table>
+      <tr><th>Title</th><th>What it means</th></tr>
+      <tr><td class="k">Software Engineer / Developer</td><td>General builder of applications. The most common title.</td></tr>
+      <tr><td class="k">Mobile Developer</td><td>Builds apps for Android (Kotlin/Java) or iPhone (Swift), or both with Flutter or React Native.</td></tr>
+      <tr><td class="k">Full-Stack Developer</td><td>Comfortable on both the user-facing side and the server side of a web app.</td></tr>
+      <tr><td class="k">Desktop / Systems Developer</td><td>Builds programs that run on Windows, Mac, or Linux, often in C++, C#, or Java.</td></tr>
+      <tr><td class="k">Game Developer</td><td>Builds games, usually with engines like Unity (C#) or Unreal (C++).</td></tr>
+      <tr><td class="k">QA / Test Engineer</td><td>Specialises in testing software and writing automated tests. A common, friendly entry point.</td></tr>
+    </table>
+    <h3>Core tools, explained</h3>
+    <p>Tools are just software that helps you make software. You will meet these four everywhere.</p>
+    <table>
+      <tr><th>Tool</th><th>What it is for</th></tr>
+      <tr><td class="k">VS Code, IntelliJ IDEA</td><td>An <strong>IDE</strong> (Integrated Development Environment) — the program you write code in. Think of it as Microsoft Word for code: it colours your text, spots typos, and helps you run your program. <code>VS Code</code> is free and the best place for beginners to start.</td></tr>
+      <tr><td class="k">Git &amp; GitHub</td><td><code>Git</code> saves a history of every change to your code, so you can undo mistakes and work with others without overwriting each other. <code>GitHub</code> is the website where that history lives online — it is also where developers show off their work. Your GitHub profile becomes your portfolio.</td></tr>
+      <tr><td class="k">Docker</td><td>Packages your program with everything it needs so it runs identically on any computer. It ends the classic problem of "but it works on my machine!" You will not need this in your first months, but you will hear the word constantly.</td></tr>
+      <tr><td class="k">Jira, Trello</td><td>Project boards where teams list tasks, assign them, and move them from "To do" to "Done". Not technical — just how teams stay organised.</td></tr>
+    </table>
+    <h3>The languages</h3>
+    <p>A <strong>programming language</strong> is the set of words and rules you use to give instructions to a computer. Different languages are popular for different kinds of software:</p>
+    <table>
+      <tr><th>Language</th><th>Best known for</th></tr>
+      <tr><td class="k">Python</td><td>Easiest to read. Great first language. Used everywhere from web back-ends to AI.</td></tr>
+      <tr><td class="k">JavaScript / TypeScript</td><td>The language of the web. Every website runs it. TypeScript is JavaScript with extra safety checks.</td></tr>
+      <tr><td class="k">Java</td><td>Large business systems, banking software, and Android apps. Very stable, very employable.</td></tr>
+      <tr><td class="k">C#</td><td>Windows applications, business software, and Unity games. Similar feel to Java.</td></tr>
+      <tr><td class="k">C++</td><td>When speed matters: game engines, operating systems, high-performance software. Harder; usually not a first language.</td></tr>
+      <tr><td class="k">Kotlin / Swift</td><td>The modern languages for Android apps (Kotlin) and iPhone apps (Swift).</td></tr>
+    </table>
+    <p class="small">Beginner advice: start with <strong>Python</strong> (if you want general programming) or <strong>JavaScript</strong> (if you want to build things you can see in a browser quickly). Your second language will take a quarter of the time the first one did.</p>
+    <h3>Is this for you?</h3>
+    <p>Tick the ones that sound like you. Four or more is a strong sign.</p>
+    <ul class="check">
+      <li>You enjoy building things and get a kick out of "it works!" moments.</li>
+      <li>You like solving puzzles and don't mind being stuck for a while before it clicks.</li>
+      <li>You are patient with small details — a missing comma can stop a whole program.</li>
+      <li>You like the idea of creating apps or tools that other people actually use.</li>
+      <li>You are happy to spend a lot of time reading, searching, and experimenting.</li>
+      <li>You prefer clear right-or-wrong feedback (the program runs, or it doesn't).</li>
+    </ul>
+    <h3>Beginner roadmap</h3>
+    <div class="stage">
+      <div class="t"><span>Stage 1</span> Foundations (weeks 1–4)</div>
+      <ul>
+        <li>Install <code>VS Code</code> and pick one language: Python or JavaScript.</li>
+        <li>Learn the basics: variables, conditions (if/else), loops, functions, lists.</li>
+        <li>Write tiny programs every day: a calculator, a guessing game, a to-do list in the terminal.</li>
+        <li>Create a GitHub account and upload your tiny programs. Yes, even the ugly ones.</li>
+      </ul>
+    </div>
+    <div class="stage">
+      <div class="t"><span>Stage 2</span> Building real things (months 2–4)</div>
+      <ul>
+        <li>Learn how programs read and save data (files, then a simple database).</li>
+        <li>Learn to use other people's code: libraries and packages.</li>
+        <li>Build one complete small project end-to-end: a budget tracker, a quiz app, a simple booking tool.</li>
+        <li>Learn Git properly: commits, branches, and pull requests.</li>
+      </ul>
+    </div>
+    <div class="stage">
+      <div class="t"><span>Stage 3</span> Specialise and show your work (months 4–8)</div>
+      <ul>
+        <li>Choose a direction: web, mobile, desktop, or games — and learn its main framework.</li>
+        <li>Build two or three portfolio projects that solve real problems for real people (a local business, a church, a school, a friend's shop).</li>
+        <li>Contribute a small fix to an open-source project on GitHub.</li>
+        <li>Start applying for internships, junior roles, or freelance jobs.</li>
+      </ul>
+    </div>
+    <div class="box gold"><div class="t">First project idea</div><p>A "Contact Me" web form for a real small business, that saves messages to a file or database. Small enough to finish, real enough to matter.</p></div>
+  </div>
+  <footer><span>Chapter 3 · Software Development</span><span class="num"></span></footer>
+</section>
+
+<!-- ============ CH4 AI / ML ============ -->
+<section class="page dark opener" id="ch4">
+  <div class="content">
+    <div class="kicker">Chapter 4</div>
+    <div class="bignum">04</div>
+    <h2>Artificial Intelligence &amp; Machine Learning</h2>
+    <div class="tagline">"Make the thing smart."</div>
+    <div class="plain">
+      <div class="t">In plain English</div>
+      Normal software follows rules a human wrote: "if the password is wrong, show an error." Machine learning is different — instead of writing the rules, you show the computer thousands of examples and let it <em>work out</em> the rules itself. That is how your phone recognises your face, how streaming apps guess what you'll like, and how chatbots write sentences. AI engineers are the people who gather those examples, train the systems, and put them to work.
+    </div>
+    <div class="glance">
+      <div><b>You'll enjoy it if</b><span>you like patterns, experiments, and "what if" questions</span></div>
+      <div><b>Main languages</b><span>Python (the standard), R, C++, Julia</span></div>
+      <div><b>Signature tools</b><span>Jupyter, TensorFlow, PyTorch, Hugging Face, Scikit-learn</span></div>
+      <div><b>Time to first project</b><span>6–10 weeks (after Python basics)</span></div>
+    </div>
+  </div>
+  <footer><span>Chapter 4 · AI &amp; Machine Learning</span><span class="num"></span></footer>
+</section>
+
+<section class="page">
+  <div class="content">
+    <h3 style="margin-top:0">What they actually do</h3>
+    <p>An AI engineer's core loop is: <strong>collect data → prepare it → train a model → test it → deploy it → improve it.</strong> A <strong>model</strong> is simply the "learned" program that comes out of training; think of it as a very well-practised guesser.</p>
+    <p>In practice, the day is a mix of:</p>
+    <ul>
+      <li><strong>Working with data.</strong> Gathering it, cleaning it (real data is messy: missing values, typos, duplicates), and labelling it. This is often 60–70% of the job, and it is where careful people shine.</li>
+      <li><strong>Training models.</strong> Choosing an approach, feeding data into it, and waiting — sometimes minutes, sometimes days.</li>
+      <li><strong>Evaluating.</strong> Measuring how often the model is right, and — crucially — how it fails. A model that is 95% accurate but always wrong for one group of people is not a good model.</li>
+      <li><strong>Deploying.</strong> Wrapping the model so an app or website can use it (this overlaps with back-end and DevOps skills).</li>
+      <li><strong>Reading.</strong> The field moves so fast that keeping up is part of the work.</li>
+    </ul>
+    <h3>Job titles you will see</h3>
+    <table>
+      <tr><th>Title</th><th>What it means</th></tr>
+      <tr><td class="k">Machine Learning Engineer</td><td>Builds and deploys models into real products. Strong programming + ML knowledge.</td></tr>
+      <tr><td class="k">AI Engineer</td><td>Often means building products <em>on top of</em> existing AI models (like large language models) using APIs. A very practical, fast-growing entry route.</td></tr>
+      <tr><td class="k">Data Scientist</td><td>Overlaps heavily; usually more analysis and less deployment. See Chapter 6.</td></tr>
+      <tr><td class="k">ML Researcher</td><td>Invents new methods. Usually needs advanced study and heavy mathematics.</td></tr>
+      <tr><td class="k">Prompt / AI Product Specialist</td><td>Designs how people and businesses interact with AI tools. Lighter on code, heavy on clear thinking.</td></tr>
+    </table>
+    <div class="box"><div class="t">Honest note on maths</div><p>To <em>use</em> machine learning, you need comfortable basics: averages, percentages, simple graphs, and a willingness to learn a little statistics. To <em>invent</em> new machine learning, you need university-level maths. Almost all jobs are the first kind.</p></div>
+    <h3>Core tools, explained</h3>
+    <table>
+      <tr><th>Tool</th><th>What it is for</th></tr>
+      <tr><td class="k">Jupyter Notebooks</td><td>A workspace where you mix code, results, charts, and notes on one page — perfect for experimenting. Google Colab is a free version that runs in the browser on Google's computers, so you don't need a powerful laptop.</td></tr>
+      <tr><td class="k">Scikit-learn</td><td>A Python library with ready-made "classic" machine learning methods. The friendliest place to train your first model.</td></tr>
+      <tr><td class="k">TensorFlow, PyTorch</td><td>The two big libraries for <strong>deep learning</strong> — the technique behind image recognition, speech, and chatbots. PyTorch is currently the more beginner-friendly of the two.</td></tr>
+      <tr><td class="k">Hugging Face</td><td>A website and library where thousands of pre-trained models are shared for free. You can download a model that already understands language or images and adapt it, instead of training from scratch.</td></tr>
+      <tr><td class="k">AI APIs (OpenAI, Anthropic, Google, etc.)</td><td>Let you use powerful models over the internet with a few lines of code. This is how most "AI-powered" apps are built today.</td></tr>
+      <tr><td class="k">pandas, NumPy</td><td>Python libraries for handling tables of data and numbers. You will use them every single day.</td></tr>
+    </table>
+    <h3>The languages</h3>
+    <table>
+      <tr><th>Language</th><th>Why it matters here</th></tr>
+      <tr><td class="k">Python</td><td>The absolute standard. Nearly every AI tool is built for Python first. Learn this and nothing else at the start.</td></tr>
+      <tr><td class="k">R</td><td>Popular with statisticians and researchers. Useful, but optional.</td></tr>
+      <tr><td class="k">C++</td><td>Used inside the high-performance engines that power AI. Not needed until much later, if ever.</td></tr>
+      <tr><td class="k">Julia</td><td>A newer language for fast scientific computing. Niche; good to know it exists.</td></tr>
+      <tr><td class="k">SQL</td><td>Not on most AI lists, but the language for pulling data out of databases — and you need data before you can train anything.</td></tr>
+    </table>
+    <p class="small">Beginner advice: do not start with AI. Start with Python. When you can write a program that reads a file and does something useful with it, you are ready for your first model.</p>
+    <h3>Is this for you?</h3>
+    <ul class="check">
+      <li>You are curious about <em>why</em> things happen and enjoy spotting patterns.</li>
+      <li>You like experiments: try, measure, adjust, try again.</li>
+      <li>You are comfortable with uncertainty — models are "usually right", never "always right".</li>
+      <li>You find it exciting, not scary, that the field changes every few months.</li>
+      <li>You don't mind spending hours cleaning messy data to get a good result.</li>
+      <li>You are willing to learn some statistics along the way.</li>
+    </ul>
+    <h3>Beginner roadmap</h3>
+    <div class="stage">
+      <div class="t"><span>Stage 1</span> Python and data (weeks 1–6)</div>
+      <ul>
+        <li>Learn Python basics (see Chapter 3, Stage 1).</li>
+        <li>Learn <code>pandas</code>: open a spreadsheet, filter rows, calculate averages, make a chart.</li>
+        <li>Get comfortable in Google Colab or Jupyter.</li>
+        <li>Learn the vocabulary: dataset, feature, label, training, testing, accuracy.</li>
+      </ul>
+    </div>
+    <div class="stage">
+      <div class="t"><span>Stage 2</span> First models (months 2–4)</div>
+      <ul>
+        <li>Use <code>scikit-learn</code> to train classic models: predict house prices, classify emails as spam or not.</li>
+        <li>Learn how to measure a model honestly (train/test split, accuracy, confusion matrix).</li>
+        <li>Use an AI API to build a small app — a chatbot for a business, a summariser, a quiz generator.</li>
+      </ul>
+    </div>
+    <div class="stage">
+      <div class="t"><span>Stage 3</span> Deep learning and deployment (months 4–9)</div>
+      <ul>
+        <li>Learn <code>PyTorch</code> basics and train an image classifier.</li>
+        <li>Use a pre-trained model from Hugging Face and fine-tune it for a local problem (Nigerian food recognition, local-language text, market-price prediction).</li>
+        <li>Put one model behind a simple web app so others can try it.</li>
+        <li>Write up your projects clearly — in AI, explaining your results is half the job.</li>
+      </ul>
+    </div>
+    <div class="box gold"><div class="t">First project idea</div><p>A WhatsApp-style FAQ bot for a small business, built on an AI API, that answers questions from a document you give it. Real, useful, and finishable in a weekend once you know Python.</p></div>
+  </div>
+  <footer><span>Chapter 4 · AI &amp; Machine Learning</span><span class="num"></span></footer>
+</section>
+
+<!-- ============ CH5 CYBERSECURITY ============ -->
+<section class="page dark opener" id="ch5">
+  <div class="content">
+    <div class="kicker">Chapter 5</div>
+    <div class="bignum">05</div>
+    <h2>Cybersecurity</h2>
+    <div class="tagline">"Keep the thing safe."</div>
+    <div class="plain">
+      <div class="t">In plain English</div>
+      Every system that stores something valuable — money, personal details, company secrets — is a target. Cybersecurity is the practice of building walls around those systems, watching for anyone trying to climb over, and responding fast when someone does. Security professionals think like attackers so they can defend like professionals. Some of them are even paid to break into systems — with permission — to find the holes before criminals do.
+    </div>
+    <div class="glance">
+      <div><b>You'll enjoy it if</b><span>you love investigating, and thinking "how would I get in?"</span></div>
+      <div><b>Main languages</b><span>Python, Bash, PowerShell, SQL, C/C++ (advanced)</span></div>
+      <div><b>Signature tools</b><span>Wireshark, Kali Linux, Nmap, Metasploit, Burp Suite, Splunk</span></div>
+      <div><b>Time to first project</b><span>4–8 weeks (networking basics first)</span></div>
+    </div>
+  </div>
+  <footer><span>Chapter 5 · Cybersecurity</span><span class="num"></span></footer>
+</section>
+
+<section class="page">
+  <div class="content">
+    <h3 style="margin-top:0">What they actually do</h3>
+    <p>Security work splits into two broad sides, often called the <strong>blue team</strong> (defenders) and the <strong>red team</strong> (authorised attackers). Most beginners start blue.</p>
+    <ul>
+      <li><strong>Monitoring.</strong> Watching network traffic and system logs for anything unusual: a login at 3 a.m. from another country, a computer suddenly sending huge amounts of data out.</li>
+      <li><strong>Investigating.</strong> When an alert fires, working out whether it is a real attack or a false alarm, and what the attacker touched.</li>
+      <li><strong>Patching.</strong> Keeping software updated and closing known weaknesses (<strong>vulnerabilities</strong>) before they are exploited.</li>
+      <li><strong>Penetration testing.</strong> With written permission, attempting to break into a company's systems the way a criminal would, then writing a report of what was found and how to fix it. This is "ethical hacking".</li>
+      <li><strong>Setting up protections.</strong> Firewalls, encryption, access rules, two-factor authentication.</li>
+      <li><strong>Educating people.</strong> Most breaches start with a human clicking a bad link. Training staff is real security work.</li>
+    </ul>
+    <h3>Job titles you will see</h3>
+    <table>
+      <tr><th>Title</th><th>What it means</th></tr>
+      <tr><td class="k">Security Analyst / SOC Analyst</td><td>Monitors and responds to alerts in a Security Operations Centre. The most common entry-level role.</td></tr>
+      <tr><td class="k">Penetration Tester</td><td>Authorised attacker. Finds and reports weaknesses.</td></tr>
+      <tr><td class="k">Security Engineer</td><td>Builds and maintains the protective systems.</td></tr>
+      <tr><td class="k">Incident Responder / Forensics</td><td>Investigates after a breach: what happened, how, and what was taken.</td></tr>
+      <tr><td class="k">GRC Analyst</td><td>Governance, Risk and Compliance — policies, audits, standards. Less technical, very in demand.</td></tr>
+    </table>
+    <div class="box"><div class="t">An important line</div><p>The skills in this chapter are powerful. Using them on systems you do not own or have written permission to test is a crime, everywhere. Ethical hackers practise on purpose-built training platforms and labs. The whole profession is built on trust.</p></div>
+    <h3>Core tools, explained</h3>
+    <table>
+      <tr><th>Tool</th><th>What it is for</th></tr>
+      <tr><td class="k">Wireshark</td><td>Captures and shows every packet of data passing through a network, like a microscope for internet traffic. You can literally watch a website request travel.</td></tr>
+      <tr><td class="k">Kali Linux</td><td>A version of the Linux operating system that comes pre-loaded with hundreds of security tools. The standard toolbox for penetration testers.</td></tr>
+      <tr><td class="k">Nmap</td><td>Scans a network to discover which devices are connected and which "doors" (ports) they have open.</td></tr>
+      <tr><td class="k">Metasploit</td><td>A framework for testing whether a known vulnerability can actually be exploited on a system — used in authorised tests.</td></tr>
+      <tr><td class="k">Burp Suite</td><td>Sits between your browser and a website so you can inspect and modify what is being sent. The main tool for testing web application security.</td></tr>
+      <tr><td class="k">Splunk (and other SIEMs)</td><td>Collects logs from thousands of systems into one searchable place and raises alerts. This is the screen a SOC analyst watches.</td></tr>
+      <tr><td class="k">Firewalls</td><td>Hardware or software that decides which traffic is allowed in and out of a network. The front gate.</td></tr>
+    </table>
+    <h3>The languages</h3>
+    <table>
+      <tr><th>Language</th><th>Why it matters here</th></tr>
+      <tr><td class="k">Python</td><td>Automating repetitive security tasks, writing scanners, parsing logs, building small tools.</td></tr>
+      <tr><td class="k">Bash / Shell</td><td>The command line of Linux. Security people live in the terminal; this is non-negotiable.</td></tr>
+      <tr><td class="k">PowerShell</td><td>The command line of Windows. Essential because most companies run Windows.</td></tr>
+      <tr><td class="k">SQL</td><td>Understanding databases lets you understand — and prevent — SQL injection, one of the most common attacks.</td></tr>
+      <tr><td class="k">C / C++</td><td>For advanced work like analysing malware or finding low-level bugs. Not a starting point.</td></tr>
+    </table>
+    <p class="small">Beginner advice: before any tool, learn <strong>how networks work</strong> (IP addresses, ports, DNS, HTTP) and get comfortable in a Linux terminal. Security is applied networking plus applied curiosity.</p>
+    <h3>Is this for you?</h3>
+    <ul class="check">
+      <li>You enjoy detective work — following clues to find out what really happened.</li>
+      <li>When you see a system, you naturally wonder how it could be tricked or broken.</li>
+      <li>You are careful, ethical, and comfortable with responsibility.</li>
+      <li>You can stay calm under pressure (incidents happen at bad times).</li>
+      <li>You like learning how things work under the hood — networks, operating systems.</li>
+      <li>You are happy to keep learning forever; attackers never stop, so neither do defenders.</li>
+    </ul>
+    <h3>Beginner roadmap</h3>
+    <div class="stage">
+      <div class="t"><span>Stage 1</span> Foundations (weeks 1–6)</div>
+      <ul>
+        <li>Learn networking basics: what an IP address is, what DNS does, how a web request travels.</li>
+        <li>Install Linux (or use a virtual machine) and learn the terminal: navigating, files, permissions, users.</li>
+        <li>Learn how operating systems, passwords, and encryption work at a basic level.</li>
+        <li>Start Python basics for scripting.</li>
+      </ul>
+    </div>
+    <div class="stage">
+      <div class="t"><span>Stage 2</span> Hands-on labs (months 2–5)</div>
+      <ul>
+        <li>Join a free legal practice platform (e.g. TryHackMe, Hack The Box, OverTheWire) and complete beginner paths.</li>
+        <li>Use <code>Wireshark</code> to inspect your own traffic; use <code>Nmap</code> on your own home network.</li>
+        <li>Learn the OWASP Top 10 — the ten most common web weaknesses — and test them on deliberately vulnerable practice apps.</li>
+        <li>Consider a foundation certificate (e.g. CompTIA Security+) as a structured study path.</li>
+      </ul>
+    </div>
+    <div class="stage">
+      <div class="t"><span>Stage 3</span> Specialise (months 5–12)</div>
+      <ul>
+        <li>Pick blue (SOC / defence) or red (penetration testing) and go deep.</li>
+        <li>Build a home lab: a few virtual machines you attack and defend.</li>
+        <li>Write up your lab exercises as reports — employers love seeing you can communicate findings.</li>
+        <li>Enter beginner-friendly Capture-the-Flag (CTF) competitions.</li>
+      </ul>
+    </div>
+    <div class="box gold"><div class="t">First project idea</div><p>A "security check-up" for a small business: review their Wi-Fi setup, password habits, software updates, and backups, then write a one-page plain-English report with fixes. No hacking required — and genuinely valuable.</p></div>
+  </div>
+  <footer><span>Chapter 5 · Cybersecurity</span><span class="num"></span></footer>
+</section>
+
+<!-- ============ CH6 DATA SCIENCE ============ -->
+<section class="page dark opener" id="ch6">
+  <div class="content">
+    <div class="kicker">Chapter 6</div>
+    <div class="bignum">06</div>
+    <h2>Data Science</h2>
+    <div class="tagline">"Make the numbers talk."</div>
+    <div class="plain">
+      <div class="t">In plain English</div>
+      Every business collects data — sales, clicks, deliveries, complaints, sensor readings — usually far more than anyone can read. Data science is the skill of turning those mountains of numbers into clear answers: Which products are really making money? Why did customers leave last month? What will sales look like in December? Data scientists clean the data, ask it questions, find the patterns, and explain them in charts and words that decision-makers can act on.
+    </div>
+    <div class="glance">
+      <div><b>You'll enjoy it if</b><span>you like finding the story hidden in numbers</span></div>
+      <div><b>Main languages</b><span>Python, SQL, R (and Excel — seriously)</span></div>
+      <div><b>Signature tools</b><span>Excel, Power BI, Tableau, pandas, Jupyter, SQL Server, Spark</span></div>
+      <div><b>Time to first project</b><span>2–3 weeks (with Excel or SQL)</span></div>
+    </div>
+  </div>
+  <footer><span>Chapter 6 · Data Science</span><span class="num"></span></footer>
+</section>
+
+<section class="page">
+  <div class="content">
+    <h3 style="margin-top:0">What they actually do</h3>
+    <p>Data work is a ladder, and you can step on at any rung. At the bottom is <strong>data analysis</strong> — describing what happened. At the top is <strong>data science</strong> — predicting what will happen and recommending what to do. The daily work at all levels is:</p>
+    <ul>
+      <li><strong>Getting the data.</strong> Pulling it from databases, spreadsheets, websites, or apps, usually with SQL.</li>
+      <li><strong>Cleaning it.</strong> Fixing dates written five different ways, removing duplicates, filling gaps. Unglamorous, essential, and where most of the time goes.</li>
+      <li><strong>Exploring it.</strong> Making quick charts and summaries to see what is going on.</li>
+      <li><strong>Analysing and modelling.</strong> Answering the actual question — from a simple comparison to a predictive model.</li>
+      <li><strong>Communicating.</strong> Building dashboards, writing reports, and presenting to people who do not care about code but care a great deal about the answer.</li>
+    </ul>
+    <h3>Job titles you will see</h3>
+    <table>
+      <tr><th>Title</th><th>What it means</th></tr>
+      <tr><td class="k">Data Analyst</td><td>Describes and visualises what has happened. Excel, SQL, Power BI/Tableau. The friendliest entry point in all of tech for non-programmers.</td></tr>
+      <tr><td class="k">Business Intelligence (BI) Analyst</td><td>Builds dashboards and reports that a company runs on. Very close to data analyst.</td></tr>
+      <tr><td class="k">Data Scientist</td><td>Adds statistics and machine learning to predict and recommend. Python-heavy.</td></tr>
+      <tr><td class="k">Data Engineer</td><td>Builds the pipelines that move and store data at scale. Overlaps with back-end and cloud.</td></tr>
+      <tr><td class="k">Analytics Engineer</td><td>Sits between engineer and analyst: makes data clean and ready for everyone else.</td></tr>
+    </table>
+    <div class="box"><div class="t">Why MentorK.Tech recommends data analysis as a first step</div><p>You can start with tools you already have (Excel), see results on day one, and it uses knowledge from your current job. Many of our students who "hated coding" found their way into Python <em>through</em> data, because they finally had a reason to use it.</p></div>
+    <h3>Core tools, explained</h3>
+    <table>
+      <tr><th>Tool</th><th>What it is for</th></tr>
+      <tr><td class="k">Excel / Google Sheets</td><td>Still the most-used data tool on earth. Pivot tables, formulas, and charts take you surprisingly far. Learn it properly.</td></tr>
+      <tr><td class="k">SQL databases (SQL Server, PostgreSQL, MySQL)</td><td>Where business data lives. You write SQL queries to ask questions like "total sales per region last quarter".</td></tr>
+      <tr><td class="k">Power BI, Tableau</td><td>Drag-and-drop tools for building interactive dashboards that update automatically. What executives actually look at.</td></tr>
+      <tr><td class="k">pandas, NumPy</td><td>Python libraries for working with tables of data. pandas is like Excel controlled by code — and it handles millions of rows.</td></tr>
+      <tr><td class="k">Jupyter Notebooks</td><td>The workspace for exploring data in Python: code, charts, and notes side by side.</td></tr>
+      <tr><td class="k">Apache Spark, Hadoop</td><td>For "big data" — datasets too large for one computer. Advanced; you will not need them for a long while.</td></tr>
+    </table>
+    <h3>The languages</h3>
+    <table>
+      <tr><th>Language</th><th>Why it matters here</th></tr>
+      <tr><td class="k">SQL</td><td>Essential. The language for asking databases questions. Learnable in weeks, used for a career.</td></tr>
+      <tr><td class="k">Python</td><td>The main language for analysis beyond spreadsheets, and for all machine learning.</td></tr>
+      <tr><td class="k">R</td><td>Built by statisticians for statistics. Strong in research and academia; optional elsewhere.</td></tr>
+      <tr><td class="k">SAS</td><td>An older commercial tool still used in banks and healthcare. Learn only if a target employer uses it.</td></tr>
+      <tr><td class="k">DAX / M (Power BI)</td><td>Formula languages inside Power BI. You will pick them up while building dashboards.</td></tr>
+    </table>
+    <p class="small">Beginner advice: <strong>Excel → SQL → Power BI → Python</strong>, in that order. Each step gives you a usable skill before the next one begins.</p>
+    <h3>Is this for you?</h3>
+    <ul class="check">
+      <li>You like asking "why?" and are not satisfied with "that's just how it is".</li>
+      <li>You are organised and notice when something in a table doesn't add up.</li>
+      <li>You enjoy making things clear for other people — a good chart makes you happy.</li>
+      <li>You are comfortable with basic maths (percentages, averages) and willing to learn some statistics.</li>
+      <li>You already work with numbers in your job (sales, accounts, operations, research).</li>
+      <li>You prefer solving business questions over building apps.</li>
+    </ul>
+    <h3>Beginner roadmap</h3>
+    <div class="stage">
+      <div class="t"><span>Stage 1</span> Spreadsheets and SQL (weeks 1–5)</div>
+      <ul>
+        <li>Master Excel/Sheets: sorting, filtering, VLOOKUP/XLOOKUP, pivot tables, charts.</li>
+        <li>Learn SQL: SELECT, WHERE, GROUP BY, JOIN. Practise on free sample databases.</li>
+        <li>Find a real dataset you care about (local prices, football, elections, your own expenses) and answer three questions about it.</li>
+      </ul>
+    </div>
+    <div class="stage">
+      <div class="t"><span>Stage 2</span> Dashboards and Python (months 2–4)</div>
+      <ul>
+        <li>Build an interactive dashboard in <code>Power BI</code> or <code>Tableau Public</code> (free).</li>
+        <li>Learn Python basics, then <code>pandas</code> for cleaning and analysis, and a charting library.</li>
+        <li>Learn basic statistics: distributions, correlation, and why averages can lie.</li>
+      </ul>
+    </div>
+    <div class="stage">
+      <div class="t"><span>Stage 3</span> Prediction and portfolio (months 4–8)</div>
+      <ul>
+        <li>Train simple predictive models with <code>scikit-learn</code> (see Chapter 4).</li>
+        <li>Complete three portfolio projects, each with a clear question, clean process, and a one-page summary a manager could read.</li>
+        <li>Publish them on GitHub and share dashboards publicly.</li>
+      </ul>
+    </div>
+    <div class="box gold"><div class="t">First project idea</div><p>Take a small business's sales records (even handwritten ones, typed into a sheet), clean them, and build a dashboard showing best-selling items, busiest days, and monthly trend. Present it to the owner. That is a real data analysis project.</p></div>
+  </div>
+  <footer><span>Chapter 6 · Data Science</span><span class="num"></span></footer>
+</section>
+
+<!-- ============ CH7 CLOUD / DEVOPS ============ -->
+<section class="page dark opener" id="ch7">
+  <div class="content">
+    <div class="kicker">Chapter 7</div>
+    <div class="bignum">07</div>
+    <h2>Cloud, Systems &amp; DevOps</h2>
+    <div class="tagline">"Keep the thing running."</div>
+    <div class="plain">
+      <div class="t">In plain English</div>
+      When you use an app, the code is not running on your phone alone — it is talking to powerful computers called <strong>servers</strong> somewhere in the world. "The cloud" simply means renting those servers from companies like Amazon, Microsoft, or Google instead of buying your own. Cloud and DevOps professionals set up those servers, keep them running 24/7, make them scale when a million people show up at once, and build the automated conveyor belts that carry new code from a developer's laptop to live users safely.
+    </div>
+    <div class="glance">
+      <div><b>You'll enjoy it if</b><span>you like systems, automation, and reliability</span></div>
+      <div><b>Main languages</b><span>Bash, Python, Go, YAML/JSON (configuration)</span></div>
+      <div><b>Signature tools</b><span>AWS, Azure, GCP, Terraform, Docker, Kubernetes, GitHub Actions</span></div>
+      <div><b>Time to first project</b><span>4–6 weeks (Linux basics first)</span></div>
+    </div>
+  </div>
+  <footer><span>Chapter 7 · Cloud, Systems &amp; DevOps</span><span class="num"></span></footer>
+</section>
+
+<section class="page">
+  <div class="content">
+    <h3 style="margin-top:0">What they actually do</h3>
+    <p>This chapter covers two closely related roles that share most of their tools.</p>
+    <h4>Cloud Engineer / Architect</h4>
+    <p>Designs and manages a company's computing footprint in the cloud. They decide which services to use, how to connect them securely, how to keep costs down, and how to make sure the system stays up. A common early project is <strong>migration</strong>: moving a company's old in-office servers into the cloud without anyone noticing.</p>
+    <h4>DevOps Engineer</h4>
+    <p>"DevOps" joins <em>Development</em> and <em>Operations</em>. Traditionally, developers wrote code and threw it over a wall to an operations team who tried to make it run. DevOps engineers remove the wall. They build <strong>pipelines</strong> — automated steps that test new code, package it, and release it, often many times a day — so that changes go live fast and safely.</p>
+    <p>Day to day, both roles involve:</p>
+    <ul>
+      <li>Writing configuration and scripts rather than app features. Much of the "code" is describing infrastructure.</li>
+      <li>Monitoring dashboards: CPU, memory, errors, response times. Being on call when things break.</li>
+      <li>Automating anything done more than twice.</li>
+      <li>Security and cost reviews — a misconfigured cloud account can leak data or burn thousands of dollars in a night.</li>
+    </ul>
+    <h3>Job titles you will see</h3>
+    <table>
+      <tr><th>Title</th><th>What it means</th></tr>
+      <tr><td class="k">Cloud Engineer</td><td>Builds and operates cloud infrastructure. Entry route via certifications.</td></tr>
+      <tr><td class="k">Cloud Architect</td><td>Senior; designs whole systems. Years of experience.</td></tr>
+      <tr><td class="k">DevOps Engineer</td><td>Owns pipelines, automation, and deployments.</td></tr>
+      <tr><td class="k">Site Reliability Engineer (SRE)</td><td>Focuses on uptime and performance; strong coding.</td></tr>
+      <tr><td class="k">Systems Administrator</td><td>The classic role: manages servers, users, and backups. Great foundation.</td></tr>
+    </table>
+    <h3>Core tools, explained</h3>
+    <table>
+      <tr><th>Tool</th><th>What it is for</th></tr>
+      <tr><td class="k">AWS, Microsoft Azure, Google Cloud (GCP)</td><td>The three big cloud providers, each offering hundreds of rentable services: servers, storage, databases, AI. Learn one deeply (AWS is most common); the others will feel familiar.</td></tr>
+      <tr><td class="k">Linux</td><td>The operating system running most servers in the world. Not optional in this field.</td></tr>
+      <tr><td class="k">Docker</td><td>Packages an application and its needs into a <strong>container</strong> that runs the same everywhere. The building block of modern deployment.</td></tr>
+      <tr><td class="k">Kubernetes</td><td>Manages hundreds of containers: starts them, restarts crashed ones, spreads them across servers. Complex; learn after Docker.</td></tr>
+      <tr><td class="k">Terraform</td><td><strong>Infrastructure as Code</strong>: you describe your servers and networks in a text file, and Terraform creates them. Repeatable, reviewable, no clicking around.</td></tr>
+      <tr><td class="k">Jenkins, GitHub Actions</td><td>Pipeline tools. "When new code is pushed, run the tests, build the app, deploy it." GitHub Actions is the easier place to start.</td></tr>
+      <tr><td class="k">Ansible</td><td>Configures many servers at once from one script.</td></tr>
+    </table>
+    <h3>The languages</h3>
+    <table>
+      <tr><th>Language</th><th>Why it matters here</th></tr>
+      <tr><td class="k">Bash / Shell</td><td>The Linux command line. You will write small scripts constantly.</td></tr>
+      <tr><td class="k">Python</td><td>Automation, cloud APIs, and glue between tools.</td></tr>
+      <tr><td class="k">Go (Golang)</td><td>Many cloud tools (Docker, Kubernetes, Terraform) are written in Go. Useful at intermediate level.</td></tr>
+      <tr><td class="k">YAML / JSON</td><td>Not programming languages but <em>configuration</em> formats. Pipelines, Kubernetes, and cloud settings are all written in them. You will read and write these daily.</td></tr>
+      <tr><td class="k">Groovy</td><td>Used for Jenkins pipelines. Learn only if you use Jenkins.</td></tr>
+    </table>
+    <p class="small">Beginner advice: Linux terminal first, then one cloud provider's free tier, then Docker. Certifications (e.g. AWS Cloud Practitioner) give beginners a clear, employer-recognised path.</p>
+    <h3>Is this for you?</h3>
+    <ul class="check">
+      <li>You like things to be orderly, reliable, and automated.</li>
+      <li>You enjoy understanding how systems fit together more than designing screens.</li>
+      <li>You are calm when something is on fire and can work through a checklist.</li>
+      <li>You find it satisfying to make a slow, manual process fast and automatic.</li>
+      <li>You are happy living in a terminal and reading documentation.</li>
+      <li>You are comfortable with responsibility — real users depend on your systems.</li>
+    </ul>
+    <h3>Beginner roadmap</h3>
+    <div class="stage">
+      <div class="t"><span>Stage 1</span> Linux and networking (weeks 1–6)</div>
+      <ul>
+        <li>Install Linux (or use a virtual machine) and live in the terminal: files, permissions, processes, services.</li>
+        <li>Learn networking basics: IP, DNS, ports, HTTP, SSH.</li>
+        <li>Write Bash scripts to automate small chores. Learn Git.</li>
+      </ul>
+    </div>
+    <div class="stage">
+      <div class="t"><span>Stage 2</span> Cloud and containers (months 2–5)</div>
+      <ul>
+        <li>Open a free-tier account on AWS (or Azure/GCP). Launch a server, host a website on it, set up a database.</li>
+        <li>Study for and take an entry-level cloud certification.</li>
+        <li>Learn <code>Docker</code>: containerise a simple app you (or a friend) built.</li>
+        <li>Build a <code>GitHub Actions</code> pipeline that tests and deploys that app automatically.</li>
+      </ul>
+    </div>
+    <div class="stage">
+      <div class="t"><span>Stage 3</span> Infrastructure as code and scale (months 5–10)</div>
+      <ul>
+        <li>Recreate your cloud setup with <code>Terraform</code>.</li>
+        <li>Learn <code>Kubernetes</code> basics and deploy a multi-container app.</li>
+        <li>Add monitoring and alerts. Break things on purpose and practise recovering.</li>
+        <li>Document everything in a public repository — your infrastructure projects are your portfolio.</li>
+      </ul>
+    </div>
+    <div class="box gold"><div class="t">First project idea</div><p>Take a friend's website or portfolio, put it on a cloud server with a proper domain and HTTPS, and set it up so that every change they push to GitHub goes live automatically. That is DevOps in miniature.</p></div>
+  </div>
+  <footer><span>Chapter 7 · Cloud, Systems &amp; DevOps</span><span class="num"></span></footer>
+</section>
+
+<!-- ============ CH8 WEB STACK ============ -->
+<section class="page dark opener" id="ch8">
+  <div class="content">
+    <div class="kicker">Chapter 8</div>
+    <div class="bignum">08</div>
+    <h2>The Web Stack: UI/UX, Front-End &amp; Back-End</h2>
+    <div class="tagline">"Design it. Build what they see. Build what they don't."</div>
+    <div class="plain">
+      <div class="t">In plain English</div>
+      Every website and web app is made of three layers built by three kinds of people. The <strong>UI/UX designer</strong> plans how it should look and feel, before any code. The <strong>front-end developer</strong> builds the part you see and click in your browser. The <strong>back-end developer</strong> builds the invisible engine behind it: the server, the logic, and the database that remembers everything. Together, they are the "web stack" — and this is the most popular starting point in tech, because you can see your results within days.
+    </div>
+    <div class="glance">
+      <div><b>You'll enjoy it if</b><span>you want to build things people can use immediately</span></div>
+      <div><b>Main languages</b><span>HTML, CSS, JavaScript/TypeScript; Python, Node.js, Java, Go, C#</span></div>
+      <div><b>Signature tools</b><span>Figma, VS Code, React, Next.js, Tailwind, Node.js, PostgreSQL, Postman</span></div>
+      <div><b>Time to first project</b><span>1–2 weeks (a live one-page site)</span></div>
+    </div>
+  </div>
+  <footer><span>Chapter 8 · The Web Stack</span><span class="num"></span></footer>
+</section>
+
+<section class="page">
+  <div class="content">
+    <h3 style="margin-top:0">Layer 1 — UI/UX Design</h3>
+    <p><strong>UI</strong> (User Interface) is how it looks: colours, layout, buttons, typography. <strong>UX</strong> (User Experience) is how it works for a person: can they find what they need, is the journey from "open app" to "done" smooth or frustrating? UI/UX designers research users, sketch flows, build clickable prototypes, and hand a finished design to developers.</p>
+    <p><strong>What they do daily:</strong> interview or observe users; map out the screens and the path between them (a "user flow"); draw rough sketches (wireframes), then polished designs; test prototypes with real people; maintain a <strong>design system</strong> — the reusable buttons, colours, and components a product is built from.</p>
+    <table>
+      <tr><th>Tool</th><th>What it is for</th></tr>
+      <tr><td class="k">Figma</td><td>The industry standard. Design screens, build clickable prototypes, collaborate live. Free to start and runs in the browser.</td></tr>
+      <tr><td class="k">Adobe XD, Sketch</td><td>Alternatives to Figma. Less common now, but you may meet them.</td></tr>
+      <tr><td class="k">FigJam, Miro</td><td>Whiteboards for user flows, brainstorming, and research notes.</td></tr>
+    </table>
+    <p><strong>Programming languages: none.</strong> UI/UX is a visual and structural discipline. Knowing a little HTML/CSS helps you talk to developers, but it is not required. This is the best field in this book for creative people who do not want to code.</p>
+    <div class="box"><div class="t">Is UI/UX for you?</div>
+      <ul class="check" style="margin-bottom:0">
+        <li>You notice when an app is confusing and can say exactly why.</li>
+        <li>You care about how things look <em>and</em> how they work.</li>
+        <li>You like talking to people and understanding their frustrations.</li>
+        <li>You enjoy iterating: draft, feedback, improve, repeat.</li>
+      </ul>
+    </div>
+    <div class="stage" style="margin-top:8pt">
+      <div class="t"><span>Roadmap</span> UI/UX</div>
+      <p><strong>Weeks 1–4:</strong> learn design basics (layout, spacing, colour, type) and Figma. Redesign one screen of an app you use daily. <strong>Months 2–4:</strong> learn UX process — research, flows, wireframes, prototypes, usability tests. Design a complete small app. <strong>Months 4–6:</strong> build three case studies (problem → process → solution) into a portfolio site. Design a real product for a real client, even for free.</p>
+    </div>
+    <h3>Layer 2 — Front-End Development</h3>
+    <p>Front-end developers take the designer's screens and turn them into a working website or app that runs in a browser. They make it look right on a phone and a laptop, make buttons do things, and connect the screens to the back-end so real data appears.</p>
+    <p><strong>What they do daily:</strong> build pages and components from designs; make layouts responsive (they adapt to any screen size); handle user actions (clicks, forms, scrolling); fetch data from the back-end and display it; test in different browsers; care about speed and accessibility so everyone can use the site.</p>
+    <table>
+      <tr><th>Language / Tool</th><th>What it is for</th></tr>
+      <tr><td class="k">HTML</td><td>The structure: headings, paragraphs, images, links, forms. Your first language — learnable in days.</td></tr>
+      <tr><td class="k">CSS</td><td>The style: colours, fonts, spacing, layout, animation. Makes HTML look like a design.</td></tr>
+      <tr><td class="k">JavaScript</td><td>The behaviour: what happens when you click, type, or scroll. The only programming language browsers understand.</td></tr>
+      <tr><td class="k">TypeScript</td><td>JavaScript with type checking that catches mistakes early. Standard in professional teams; learn after JavaScript.</td></tr>
+      <tr><td class="k">React, Next.js</td><td>A library (React) and a framework built on it (Next.js) for building complex, fast apps out of reusable components. The most in-demand front-end skills.</td></tr>
+      <tr><td class="k">Tailwind CSS</td><td>A popular way to write CSS quickly using ready-made utility classes.</td></tr>
+      <tr><td class="k">VS Code, Git, browser DevTools</td><td>Your editor, your history, and the built-in inspector in Chrome/Firefox that lets you see and tweak any website live.</td></tr>
+    </table>
+    <div class="box"><div class="t">Is front-end for you?</div>
+      <ul class="check" style="margin-bottom:0">
+        <li>You want to see results instantly — change code, refresh, see it.</li>
+        <li>You like the mix of visual work and logic.</li>
+        <li>You care about the details of how things feel to use.</li>
+      </ul>
+    </div>
+    <div class="stage" style="margin-top:8pt">
+      <div class="t"><span>Roadmap</span> Front-End</div>
+      <p><strong>Weeks 1–4:</strong> HTML and CSS. Build and publish a one-page personal site (free hosting on GitHub Pages, Netlify or Vercel). <strong>Months 2–4:</strong> JavaScript fundamentals; make pages interactive; fetch data from a public API. <strong>Months 4–7:</strong> React, then Next.js and TypeScript; build two or three real sites for real people; make them fast and mobile-friendly.</p>
+    </div>
+    <h3>Layer 3 — Back-End Development</h3>
+    <p>Back-end developers build the engine room. When you log in, search, pay, or upload a photo, the front-end sends a request to the back-end, which checks it, does the work, saves or fetches data from a <strong>database</strong>, and sends the answer back. Users never see the back-end, but nothing works without it.</p>
+    <p><strong>What they do daily:</strong> design and build <strong>APIs</strong> (the "menu" of requests an app can make); design databases; handle logins and security; integrate payments, SMS, and email; make things fast under heavy use; write tests.</p>
+    <table>
+      <tr><th>Language / Tool</th><th>What it is for</th></tr>
+      <tr><td class="k">Node.js (JavaScript)</td><td>Runs JavaScript on the server, so one language covers front and back. Very popular for startups.</td></tr>
+      <tr><td class="k">Python (Django, FastAPI, Flask)</td><td>Readable and fast to build with. Great first back-end language.</td></tr>
+      <tr><td class="k">Java, C#, Go, Ruby</td><td>Java/C# in large companies and banks; Go for high-performance services; Ruby (Rails) in many startups.</td></tr>
+      <tr><td class="k">PostgreSQL, MySQL</td><td>Relational databases: data in tables, queried with SQL. Learn one; PostgreSQL is an excellent choice.</td></tr>
+      <tr><td class="k">MongoDB, Redis</td><td>MongoDB stores flexible JSON-like records (common with Node.js); Redis is a super-fast in-memory store for caching.</td></tr>
+      <tr><td class="k">Postman</td><td>A tool for sending test requests to your API and seeing the responses, without needing a front-end.</td></tr>
+    </table>
+    <div class="box"><div class="t">Is back-end for you?</div>
+      <ul class="check" style="margin-bottom:0">
+        <li>You care more about how things work than how they look.</li>
+        <li>You like logic, structure, and data.</li>
+        <li>You enjoy thinking about edge cases: "what if two people pay at the same second?"</li>
+      </ul>
+    </div>
+    <div class="stage" style="margin-top:8pt">
+      <div class="t"><span>Roadmap</span> Back-End</div>
+      <p><strong>Weeks 1–4:</strong> one language (Python or JavaScript). <strong>Months 2–4:</strong> build a simple API; connect a database; learn SQL; test with Postman. <strong>Months 4–7:</strong> add logins, uploads, and payments; deploy to the cloud; build a back-end for a real front-end. You are now <strong>full-stack</strong>.</p>
+    </div>
+  </div>
+  <footer><span>Chapter 8 · The Web Stack</span><span class="num"></span></footer>
+</section>
+
+<!-- ============ CH9 NETWORKING / HARDWARE ============ -->
+<section class="page dark opener" id="ch9">
+  <div class="content">
+    <div class="kicker">Chapter 9</div>
+    <div class="bignum">09</div>
+    <h2>Networking, Hardware &amp; IT Support</h2>
+    <div class="tagline">"Keep the lights on."</div>
+    <div class="plain">
+      <div class="t">In plain English</div>
+      Before any software can run, somebody has to make the physical world work: the computers, the cables, the Wi-Fi, the routers, the printers, the servers humming in the back room. Networking and hardware professionals build and maintain that physical and connective layer, and IT support specialists are the people every office calls when "the internet is down" or "my laptop won't start". It is the most hands-on field in this book, and one of the most reliable ways into tech without heavy programming.
+    </div>
+    <div class="glance">
+      <div><b>You'll enjoy it if</b><span>you like fixing things with your hands and helping people directly</span></div>
+      <div><b>Main languages</b><span>Little to none at first; Bash/PowerShell and Python later</span></div>
+      <div><b>Signature tools</b><span>Cisco Packet Tracer, Wireshark, routers/switches, diagnostic tools</span></div>
+      <div><b>Time to first project</b><span>1–3 weeks (set up a small network or build a PC)</span></div>
+    </div>
+  </div>
+  <footer><span>Chapter 9 · Networking &amp; Hardware</span><span class="num"></span></footer>
+</section>
+
+<section class="page">
+  <div class="content">
+    <h3 style="margin-top:0">What they actually do</h3>
+    <h4>Network Engineer / Technician</h4>
+    <p>Designs, installs, and maintains the networks that connect computers — inside an office, across a campus, or between cities. Configures routers and switches, sets up Wi-Fi, assigns addresses, secures the network, and troubleshoots when connections fail. Larger organisations, banks, ISPs, and universities all employ them.</p>
+    <h4>Hardware / Computer Engineer</h4>
+    <p>Works with the physical machines: assembling and upgrading computers, diagnosing faulty components, repairing laptops and phones, setting up servers, and in more advanced roles designing electronics and embedded systems (the small computers inside cars, appliances, and devices).</p>
+    <h4>IT Support Specialist / Helpdesk</h4>
+    <p>The front line. Sets up new staff, fixes software and hardware problems, manages user accounts, installs updates, and keeps everything working. It is the classic first job in tech and a launchpad into networking, security, cloud, or systems administration.</p>
+    <h3>Core tools and skills</h3>
+    <table>
+      <tr><th>Tool / Skill</th><th>What it is for</th></tr>
+      <tr><td class="k">Cisco Packet Tracer, GNS3</td><td>Free simulators where you build and configure virtual networks without buying equipment.</td></tr>
+      <tr><td class="k">Routers, switches, access points</td><td>The hardware of networks. You learn to configure them through a command line.</td></tr>
+      <tr><td class="k">Wireshark, ping, traceroute</td><td>Diagnostics: watch traffic and find where a connection breaks.</td></tr>
+      <tr><td class="k">Windows / Linux administration</td><td>Managing users, installing software, fixing operating systems.</td></tr>
+      <tr><td class="k">Screwdrivers, multimeter, diagnostic software</td><td>For the hardware side. Yes, real tools.</td></tr>
+      <tr><td class="k">Ticketing systems</td><td>Where support requests are logged and tracked (e.g. Jira Service Management, Zendesk).</td></tr>
+    </table>
+    <p class="small"><strong>Languages:</strong> you can start with none. Later, <code>Bash</code>, <code>PowerShell</code>, and <code>Python</code> let you automate network and support tasks — which is exactly how a technician becomes an engineer.</p>
+    <h3>Is this for you?</h3>
+    <ul class="check">
+      <li>You like fixing things and feel good when something broken works again.</li>
+      <li>You enjoy helping people face to face and explaining things patiently.</li>
+      <li>You prefer hands-on work over sitting in code all day.</li>
+      <li>You are methodical: check this, then this, then this, until you find the fault.</li>
+      <li>You are curious about what is physically inside a computer or behind a Wi-Fi signal.</li>
+      <li>You want a clear, certification-based path into employment.</li>
+    </ul>
+    <h3>Beginner roadmap</h3>
+    <div class="stage">
+      <div class="t"><span>Stage 1</span> Fundamentals (weeks 1–6)</div>
+      <ul>
+        <li>Learn how computers work: components, operating systems, storage, memory.</li>
+        <li>Learn networking basics: IP addresses, subnets, DNS, DHCP, routers vs switches, Wi-Fi.</li>
+        <li>Practise in <code>Packet Tracer</code>: connect a few PCs and a router; make them talk.</li>
+        <li>Take apart and reassemble an old PC or laptop.</li>
+      </ul>
+    </div>
+    <div class="stage">
+      <div class="t"><span>Stage 2</span> Certifications and practice (months 2–6)</div>
+      <ul>
+        <li>Study for an entry certification: CompTIA A+ (hardware/support), Network+ or Cisco CCNA (networking).</li>
+        <li>Set up a small real network: a home or shop with a router, a shared printer, and a file server.</li>
+        <li>Learn Windows and Linux administration basics; start Bash/PowerShell scripting.</li>
+      </ul>
+    </div>
+    <div class="stage">
+      <div class="t"><span>Stage 3</span> Specialise (months 6–12)</div>
+      <ul>
+        <li>Choose: network engineering, systems administration, security (Chapter 5), or cloud (Chapter 7).</li>
+        <li>Take a helpdesk, technician, or internship role — experience compounds fast here.</li>
+        <li>Document every network you build and every problem you solve; it becomes your portfolio.</li>
+      </ul>
+    </div>
+    <div class="box gold"><div class="t">First project idea</div><p>Set up a small office or shop network from scratch: internet connection, secure Wi-Fi with a guest network, a shared printer, and simple backups. Draw the network diagram and write a one-page guide the owner can follow.</p></div>
+  </div>
+  <footer><span>Chapter 9 · Networking &amp; Hardware</span><span class="num"></span></footer>
+</section>
+
+<!-- ============ PART THREE ============ -->
+<section class="page dark part nonum">
+  <div class="content">
+    <div class="kicker">Part Three</div>
+    <h2>Choosing and Starting</h2>
+    <p>You have seen the map. Now compare the fields side by side, check your fit, and take your first thirty days one step at a time.</p>
+  </div>
+</section>
+
+<!-- CH10 comparison -->
+<section class="page" id="ch10">
+  <div class="content">
+    <div class="kicker">Chapter 10</div>
+    <h2>The Master Comparison</h2>
+    <div class="rule"></div>
+    <p class="small" style="margin-bottom:4pt">Every field on one page. Use it to compare, then go back to the chapter that pulls at you.</p>
+    <table class="cmp">
+      <tr><th>Role</th><th>Daily mission</th><th>Must-know languages</th><th>Signature tools</th></tr>
+      <tr><td class="k">Software Engineer</td><td>Build programs and apps</td><td>Python, JavaScript, Java, C#, Kotlin</td><td>VS Code, Git, Docker</td></tr>
+      <tr><td class="k">AI / ML Engineer</td><td>Train systems to learn from data</td><td>Python (+ a little C++)</td><td>PyTorch, TensorFlow, Hugging Face</td></tr>
+      <tr><td class="k">Cybersecurity Analyst</td><td>Stop attackers, patch weaknesses</td><td>Python, Bash, PowerShell</td><td>Kali Linux, Wireshark, Splunk</td></tr>
+      <tr><td class="k">Data Analyst / Scientist</td><td>Find patterns and predict from data</td><td>SQL, Python, R</td><td>Excel, Power BI, Jupyter</td></tr>
+      <tr><td class="k">Cloud Engineer</td><td>Design and run cloud systems</td><td>Python, Go, YAML</td><td>AWS / Azure / GCP, Terraform</td></tr>
+      <tr><td class="k">DevOps Engineer</td><td>Automate testing and deployment</td><td>Bash, Python, Go</td><td>Docker, Kubernetes, GitHub Actions</td></tr>
+      <tr><td class="k">UI/UX Designer</td><td>Design how products look and flow</td><td>None</td><td>Figma</td></tr>
+      <tr><td class="k">Front-End Developer</td><td>Build what users see</td><td>HTML, CSS, JavaScript, TypeScript</td><td>React, Next.js, Tailwind</td></tr>
+      <tr><td class="k">Back-End Developer</td><td>Build servers, logic, databases</td><td>Python, Node.js, Java, Go, SQL</td><td>PostgreSQL, Postman, Node.js</td></tr>
+      <tr><td class="k">Network / IT Support</td><td>Keep computers and networks working</td><td>None at first; Bash/PowerShell later</td><td>Packet Tracer, routers, Wireshark</td></tr>
+    </table>
+    <h3>Quick guide by personality</h3>
+    <table class="cmp">
+      <tr><th>If you are mostly…</th><th>Look first at</th></tr>
+      <tr><td class="k">Visual and creative</td><td>UI/UX Design, Front-End Development</td></tr>
+      <tr><td class="k">Logical and love building</td><td>Software Development, Back-End, Front-End</td></tr>
+      <tr><td class="k">Curious about "why" and patterns</td><td>Data Analysis, Data Science, AI/ML</td></tr>
+      <tr><td class="k">Investigative and careful</td><td>Cybersecurity</td></tr>
+      <tr><td class="k">Systematic and reliability-minded</td><td>Cloud, DevOps, Networking</td></tr>
+      <tr><td class="k">Hands-on and people-focused</td><td>IT Support, Hardware, Networking</td></tr>
+      <tr><td class="k">Not a fan of coding</td><td>UI/UX, Data Analysis (Excel/Power BI), IT Support, Networking</td></tr>
+    </table>
+  </div>
+  <footer><span>Chapter 10 · The Master Comparison</span><span class="num"></span></footer>
+</section>
+
+<!-- CH11 quiz -->
+<section class="page" id="ch11">
+  <div class="content">
+    <div class="kicker">Chapter 11</div>
+    <h2>Find Your Fit: A Self-Check</h2>
+    <div class="rule"></div>
+    <p>For each question, choose the answer that feels most like you — not the one you think sounds best. Write the letter down. There are no wrong answers.</p>
+    <div class="q"><b>1. A friend shows you a new app. Your first thought is:</b>
+      <span>A. "The colours and layout could be so much better."</span>
+      <span>B. "I wonder how they built this."</span>
+      <span>C. "I wonder what data they're collecting and what it shows."</span>
+      <span>D. "I wonder if this is secure."</span>
+      <span>E. "I wonder what happens when a million people use it at once."</span>
+      <span>F. "It won't connect — let me fix your Wi-Fi."</span></div>
+    <div class="q"><b>2. Which school subject did you (or would you) enjoy most?</b>
+      <span>A. Art, design, or writing</span>
+      <span>B. Building things — technical drawing, crafts, logic puzzles</span>
+      <span>C. Mathematics, statistics, or economics</span>
+      <span>D. History, law, or investigations</span>
+      <span>E. Organising anything — you ran the club's schedule</span>
+      <span>F. Physics, electronics, or fixing things at home</span></div>
+    <div class="q"><b>3. Your ideal work day is:</b>
+      <span>A. Sketching, refining, and testing ideas with people</span>
+      <span>B. Deep focus building something, seeing it work by evening</span>
+      <span>C. Digging through information until the answer appears</span>
+      <span>D. Chasing a mystery, piecing together what happened</span>
+      <span>E. Making a messy process run itself automatically</span>
+      <span>F. Moving around, hands on equipment, helping people directly</span></div>
+    <div class="q"><b>4. How do you feel about writing code?</b>
+      <span>A. I'd rather not, or only a little</span>
+      <span>B. Excited — that's the whole point</span>
+      <span>C. Happy to, if it answers a question</span>
+      <span>D. Fine, as a tool for a bigger goal</span>
+      <span>E. Scripts and automation, yes; big apps, not so much</span>
+      <span>F. Not yet — maybe later</span></div>
+    <div class="q"><b>5. When something breaks, you:</b>
+      <span>A. Notice how confusing the error message is for the user</span>
+      <span>B. Enjoy the challenge of tracing the bug in the code</span>
+      <span>C. Look at the numbers to see when it started and why</span>
+      <span>D. Ask whether someone did this on purpose</span>
+      <span>E. Ask why the system didn't restart itself</span>
+      <span>F. Check the cables, the power, the connection</span></div>
+    <div class="q"><b>6. Which result would make you proudest?</b>
+      <span>A. "This app is so easy to use."</span>
+      <span>B. "You built this yourself?"</span>
+      <span>C. "Your report changed our decision."</span>
+      <span>D. "You found the hole before the attackers did."</span>
+      <span>E. "It hasn't gone down once all year."</span>
+      <span>F. "Everything just works since you set it up."</span></div>
+    <h3>Your result</h3>
+    <p>Count your letters. Your most frequent letter is your first place to look; your second most frequent is your natural next step.</p>
+    <div class="score">
+      <b>Mostly A</b><span><strong>UI/UX Design</strong>, then Front-End Development — Chapter 8.</span>
+      <b>Mostly B</b><span><strong>Software Development</strong> or Front-End / Back-End — Chapters 3 and 8.</span>
+      <b>Mostly C</b><span><strong>Data Analysis / Data Science</strong>, then AI &amp; ML — Chapters 6 and 4.</span>
+      <b>Mostly D</b><span><strong>Cybersecurity</strong> — Chapter 5 (start with networking basics, Chapter 9).</span>
+      <b>Mostly E</b><span><strong>Cloud &amp; DevOps</strong> — Chapter 7.</span>
+      <b>Mostly F</b><span><strong>Networking, Hardware &amp; IT Support</strong> — Chapter 9.</span>
+    </div>
+    <div class="box gold" style="margin-top:10pt"><div class="t">A tie? Good.</div><p>Ties usually mean a combined path: A+B is a front-end developer with design sense. C+B is a data engineer or ML engineer. D+F is a network security specialist. E+B is a DevOps engineer who can code. Your combination is your advantage.</p></div>
+  </div>
+  <footer><span>Chapter 11 · Find Your Fit</span><span class="num"></span></footer>
+</section>
+
+<!-- CH12 first 30 days -->
+<section class="page" id="ch12">
+  <div class="content">
+    <div class="kicker">Chapter 12</div>
+    <h2>Your First 30 Days</h2>
+    <div class="rule"></div>
+    <p class="lead">Whatever field you chose, the first month looks the same: set up, learn the basics, build one tiny thing, and show it to someone.</p>
+    <p>This plan assumes about one hour a day. If you have more time, go faster; if less, stretch it to 60 days. The order matters more than the speed.</p>
+    <h3>Week 1 — Set up and commit</h3>
+    <ol class="steps">
+      <li><strong>Choose your field</strong> using Chapter 11. Write it on paper and put it where you will see it.</li>
+      <li><strong>Install your tools.</strong> One editor (VS Code, Figma, Excel, or Packet Tracer). Create a free GitHub account regardless of field.</li>
+      <li><strong>Pick one beginner course</strong> — a single free, well-reviewed one. Not five. Not "the best one". One.</li>
+      <li><strong>Fix your schedule.</strong> Same time every day. Tell someone you're doing it.</li>
+    </ol>
+    <h3>Week 2 — Learn the basics by doing</h3>
+    <ol class="steps" style="counter-reset:s 4">
+      <li><strong>Follow the course</strong> — but type every example yourself. Never copy-paste.</li>
+      <li><strong>Break things on purpose.</strong> Change a value; see what happens. This is how understanding grows.</li>
+      <li><strong>Keep a daily log:</strong> what you learned, what confused you, one question to answer tomorrow.</li>
+    </ol>
+    <h3>Week 3 — Build one tiny thing</h3>
+    <ol class="steps" style="counter-reset:s 7">
+      <li><strong>Choose a project you can finish in a week.</strong> Use the "First project idea" from your chapter, or something smaller.</li>
+      <li><strong>Finish it, even if it's ugly.</strong> Done is the goal. Perfect is the enemy.</li>
+      <li><strong>Put it online</strong> — GitHub, a Figma link, a published dashboard, a diagram and photos.</li>
+    </ol>
+    <h3>Week 4 — Show it and plan the next step</h3>
+    <ol class="steps" style="counter-reset:s 10">
+      <li><strong>Show your project to three people.</strong> One who knows nothing about tech, one who knows a little, one who knows a lot. Listen to all three.</li>
+      <li><strong>Write a short post</strong> about what you built and what you learned. It doesn't matter how many people read it. Writing it is what matters.</li>
+      <li><strong>Find a community</strong> — a local meetup, an online group, or a mentorship programme like MentorK.Tech. Learning alone is the slowest way.</li>
+      <li><strong>Plan month two.</strong> Look at Stage 2 of your chapter's roadmap and pick the next tiny project.</li>
+    </ol>
+    <div class="box">
+      <div class="t">The only rule</div>
+      <p>Do not restart. Beginners who fail usually don't fail at coding or design — they fail by switching courses, switching fields, or switching languages every time it gets hard. It <em>will</em> get hard around week two. That is normal. Keep going for the full thirty days before you judge anything.</p>
+    </div>
+    <h3>What "progress" really looks like</h3>
+    <p>New learners expect a smooth upward line. Real learning looks like this:</p>
+    <ul>
+      <li><strong>Days 1–5:</strong> Excitement. Everything is new and it feels easy.</li>
+      <li><strong>Days 6–15:</strong> The dip. Concepts pile up, errors multiply, and you wonder if you're "cut out for it". Everyone feels this. Everyone.</li>
+      <li><strong>Days 16–25:</strong> The first click. Something that was confusing suddenly makes sense. You start to fix your own errors.</li>
+      <li><strong>Days 26–30:</strong> Momentum. You finish something. You want to build the next thing.</li>
+    </ul>
+    <p>If you know the dip is coming, it loses its power. Push through it once, and you will never be a beginner in the same way again.</p>
+    <div class="box gold"><div class="t">Thirty days from now</div><p>You will have: a chosen field, working tools, one finished project online, a log of what you learned, and a plan for month two. That is more than most people who "want to get into tech" ever achieve. Start today.</p></div>
+  </div>
+  <footer><span>Chapter 12 · Your First 30 Days</span><span class="num"></span></footer>
+</section>
+
+<!-- CH13 mistakes -->
+<section class="page" id="ch13">
+  <div class="content">
+    <div class="kicker">Chapter 13</div>
+    <h2>Mistakes Beginners Make</h2>
+    <div class="rule"></div>
+    <p class="lead">We have mentored enough beginners to know exactly where they trip. Here are the traps, and how to step around them.</p>
+    <h3>1. Tutorial hell</h3>
+    <p>Watching course after course without building anything. It feels productive and produces nothing. <strong>Fix:</strong> the moment you learn a concept, use it in a project of your own, however small.</p>
+    <h3>2. Tool-hopping</h3>
+    <p>"Should I learn React or Vue? Python or JavaScript? AWS or Azure?" — asked for months while learning none of them. <strong>Fix:</strong> the first choice barely matters. Skills transfer. Pick the one in this book and move.</p>
+    <h3>3. Learning in secret</h3>
+    <p>Waiting until you are "good enough" before showing anyone. You never feel good enough, so you never share, so you never get feedback, so you never improve. <strong>Fix:</strong> share from week one. A GitHub with ugly beginner code is worth more than a perfect one that doesn't exist.</p>
+    <h3>4. Copy-pasting instead of typing</h3>
+    <p>Your fingers learn alongside your brain. Copy-paste teaches neither. <strong>Fix:</strong> type everything, even when it's slow.</p>
+    <h3>5. Skipping the fundamentals</h3>
+    <p>Jumping to React before JavaScript, to machine learning before Python, to Kali Linux before networking. It works until it very suddenly doesn't. <strong>Fix:</strong> follow Stage 1 of your roadmap even when it feels basic.</p>
+    <h3>6. Comparing your day 10 to someone's year 5</h3>
+    <p>Social media is full of people showing their finished work, never their struggle. <strong>Fix:</strong> compare yourself only to yourself last month.</p>
+    <h3>7. Buying gear instead of building skill</h3>
+    <p>A new laptop, a mechanical keyboard, three monitors — none of it makes you learn faster. <strong>Fix:</strong> use what you have until it genuinely blocks you. Then upgrade the one thing that's blocking you.</p>
+    <h3>8. Fearing error messages</h3>
+    <p>Beginners see red text and panic. Professionals see red text and read it — because the error message usually says exactly what's wrong and where. <strong>Fix:</strong> read the error slowly. Search the exact message online. Nine times out of ten, someone has hit it before you.</p>
+    <h3>9. Not asking for help — or asking badly</h3>
+    <p>Struggling alone for days is not heroic; it is slow. But "it doesn't work, please help" gets no answers. <strong>Fix:</strong> ask early, and ask well: what you're trying to do, what you tried, what happened, and the exact error. You will often solve it yourself while writing the question.</p>
+    <h3>10. Giving up in the dip</h3>
+    <p>Around week two or three, almost everyone hits a wall and concludes they're "not a tech person". This is the single biggest reason beginners quit — and it is the most predictable, most temporary stage of all. <strong>Fix:</strong> re-read Chapter 12. Expect the dip. Keep your daily hour. Get a mentor or a study partner who has been through it and can tell you it passes.</p>
+    <div class="box">
+      <div class="t">The pattern behind every mistake</div>
+      <p>Look at the list again. Almost every trap is a way of <strong>avoiding the discomfort of building something real</strong>. Watching, choosing, buying, hiding, waiting — all of them feel like progress and cost nothing. Building feels uncomfortable and costs effort. That is exactly why it works.</p>
+    </div>
+    <div class="box gold">
+      <div class="t">One sentence to remember</div>
+      <p>The person who builds one small, imperfect thing every week will, in a year, be unrecognisable — and will be far ahead of the person still choosing the perfect course.</p>
+    </div>
+  </div>
+  <footer><span>Chapter 13 · Mistakes Beginners Make</span><span class="num"></span></footer>
+</section>
+
+<!-- GLOSSARY -->
+<section class="page" id="glossary">
+  <div class="content">
+    <div class="kicker">Reference</div>
+    <h2>Glossary: Words You Will Hear</h2>
+    <div class="rule"></div>
+      <div class="gi"><b>Algorithm</b><span>A step-by-step recipe for solving a problem. Every program is made of them.</span></div>
+      <div class="gi"><b>API (Application Programming Interface)</b><span>A menu of requests one program can make to another. Your weather app uses an API to ask a server for today's forecast.</span></div>
+      <div class="gi"><b>Back-end</b><span>The server-side part of an app: logic, databases, security. Users don't see it.</span></div>
+      <div class="gi"><b>Bug</b><span>A mistake in code that makes a program behave wrongly. Fixing them is called debugging.</span></div>
+      <div class="gi"><b>Cloud</b><span>Renting computing power and storage from providers like AWS, Azure, or Google over the internet, instead of owning servers.</span></div>
+      <div class="gi"><b>Container (Docker)</b><span>A package holding an app and everything it needs, so it runs the same anywhere.</span></div>
+      <div class="gi"><b>Database</b><span>Organised storage for data that programs can read and write. SQL is the common language for asking it questions.</span></div>
+      <div class="gi"><b>Deploy</b><span>To put software live where real users can reach it.</span></div>
+      <div class="gi"><b>DevOps</b><span>The practice (and role) of automating how code is tested and released, joining development and operations.</span></div>
+      <div class="gi"><b>Framework</b><span>A ready-made structure for building a certain kind of app quickly (React for interfaces, Django for back-ends).</span></div>
+      <div class="gi"><b>Front-end</b><span>The part of a website or app that runs in the user's browser or on their screen.</span></div>
+      <div class="gi"><b>Full-stack</b><span>A developer comfortable with both front-end and back-end work.</span></div>
+      <div class="gi"><b>Git / GitHub</b><span>Git tracks every change to your code; GitHub hosts it online and doubles as a portfolio.</span></div>
+      <div class="gi"><b>IDE</b><span>Integrated Development Environment — the program you write code in, like VS Code.</span></div>
+      <div class="gi"><b>IP address</b><span>The unique number identifying a device on a network, like a postal address for computers.</span></div>
+      <div class="gi"><b>Library / Package</b><span>Code someone else wrote that you can reuse, so you don't rebuild common things from scratch.</span></div>
+      <div class="gi"><b>Linux</b><span>A free operating system that runs most servers and is the home of security and DevOps work.</span></div>
+      <div class="gi"><b>Machine learning model</b><span>A program that has "learned" patterns from example data and can make predictions on new data.</span></div>
+      <div class="gi"><b>Open source</b><span>Software whose code is public and free to use, study, and improve. Contributing to it is a great way to learn.</span></div>
+      <div class="gi"><b>Pipeline (CI/CD)</b><span>An automated sequence that tests, builds, and releases code whenever it changes.</span></div>
+      <div class="gi"><b>Port</b><span>A numbered "door" on a device through which a particular kind of network traffic passes.</span></div>
+      <div class="gi"><b>Portfolio</b><span>A collection of your real projects that shows employers and clients what you can do. More powerful than any certificate.</span></div>
+      <div class="gi"><b>Prototype</b><span>A rough, clickable version of a design used to test ideas before building.</span></div>
+      <div class="gi"><b>Responsive design</b><span>A website that adapts its layout to phones, tablets, and desktops.</span></div>
+      <div class="gi"><b>Server</b><span>A computer whose job is to serve data or services to other computers, usually running 24/7.</span></div>
+      <div class="gi"><b>SQL</b><span>Structured Query Language — the standard language for asking databases questions.</span></div>
+      <div class="gi"><b>Terminal / Command line</b><span>A text-based way of controlling a computer by typing commands. Essential in most technical fields.</span></div>
+      <div class="gi"><b>UI / UX</b><span>User Interface (how it looks) and User Experience (how it feels to use).</span></div>
+      <div class="gi"><b>Version control</b><span>Tracking changes to files over time so you can go back, compare, and collaborate. Git is the standard.</span></div>
+      <div class="gi"><b>Virtual machine (VM)</b><span>A computer running inside another computer as software. Lets you try Linux or build a lab without extra hardware.</span></div>
+      <div class="gi"><b>Vulnerability</b><span>A weakness in software or a system that an attacker could exploit.</span></div>
+      <div class="gi"><b>Wireframe</b><span>A simple sketch of a screen's layout, before colours and details are added.</span></div>
+  </div>
+  <footer><span>Glossary</span><span class="num"></span></footer>
+</section>
+
+<!-- NEXT STEPS / MENTORK -->
+<section class="page" id="next">
+  <div class="content">
+    <div class="kicker">Your next step</div>
+    <h2>Learn It. Build It. Launch It.</h2>
+    <div class="rule"></div>
+    <p class="lead">You now have a map, a compass, and a 30-day plan. The one thing this book cannot give you is someone walking beside you. That is what MentorK.Tech does.</p>
+    <h3>Learn &amp; grow with us</h3>
+    <p>We train and mentor beginners in:</p>
+    <div>
+      <span class="tag">UI/UX Design</span><span class="tag">Front-End Development</span><span class="tag">Back-End Development</span><span class="tag">Data Analysis</span><span class="tag">Computer Networking</span><span class="tag">Hardware Engineering</span><span class="tag">Modern Programming &amp; Web Technologies</span><span class="tag">…and more</span>
+    </div>
+    <p style="margin-top:6pt">From absolute zero or stuck halfway, our mentors help you choose a field, follow a roadmap, and build a portfolio that opens doors.</p>
+    <h3>Need a tech solution? We build it.</h3>
+    <p>We also deliver professional technology services for individuals, businesses, and startups:</p>
+    <div class="two" style="font-size:9.4pt">
+      <ul style="margin-bottom:0"><li>Portfolio &amp; personal websites</li><li>Company &amp; business websites</li><li>Mobile application development</li><li>Web applications</li></ul>
+      <ul style="margin-bottom:0"><li>UI/UX design</li><li>Backend systems &amp; APIs</li><li>Data &amp; digital solutions</li><li>Technical &amp; IT solutions</li></ul>
+    </div>
+    <div class="box" style="margin-top:6pt">
+      <div class="t">Your idea. Our tech. Let's build it — message us on WhatsApp</div>
+      <p style="font-family:'Poppins';font-weight:600;font-size:11pt;color:var(--navy);margin:2pt 0">+234 705 777 9214 &nbsp;·&nbsp; +234 704 797 2890</p>
+      <p class="small" style="margin:0 0 3pt">Tell us: your name, the field you chose from this book, and what you want to build. We'll take it from there.</p>
+      <p class="small" style="margin:0">See our work and programmes: <a href="https://mentork-tech-website.vercel.app">mentork-tech-website.vercel.app</a></p>
+    </div>
+  </div>
+  <footer><span>MentorK.Tech</span><span class="num"></span></footer>
+</section>
+
+<!-- FOUNDER (inside back) -->
+<section class="page dark founder" id="founder">
+  <div class="content">
+    <img class="photo" src="assets/book/founder-silhouette.jpg" alt="The Founder of MentorK.Tech">
+    <div class="caption">About the Founder</div>
+    <h2>Oladiti Kunle B.E <span style="color:var(--gold)">(MentorK)</span></h2>
+    <p style="font-family:'Poppins';font-weight:500;font-size:9.4pt;color:#9FB0D0;margin:2pt 0 0">Founder &amp; CEO, MentorK.Tech</p>
+    <p style="margin-top:6pt">MentorK.Tech was founded on a simple belief: the gap between people who "want to get into tech" and people who are building with it is not talent. It is direction, and someone willing to walk alongside you.</p>
+    <p>Kunle began, like the reader of this book, with more questions than answers — and built MentorK.Tech to be the guide that was missing then. Today the company trains and mentors beginners across design, development, data, networking, and hardware, and builds digital solutions for businesses and organisations that need their ideas turned into working products.</p>
+    <p>This book is the first in a series written to do at scale what the company does one person at a time: make the start clear, make the path real, and make the future feel buildable.</p>
+    <p style="margin-top:8pt;font-family:'Poppins';font-weight:600;color:var(--gold);font-size:9.6pt;letter-spacing:.06em">Innovate. Empower. Excel. <span style="font-family:'Inter';font-weight:500;color:#9FB0D0;letter-spacing:0;font-size:8.8pt;margin-left:6pt"><a href="https://mentork-tech-website.vercel.app" style="color:#9FB0D0;font-weight:500">mentork-tech-website.vercel.app</a></span></p>
+  </div>
+  <footer><span>About the Founder</span><span class="num"></span></footer>
+</section>
+
+<!-- BACK COVER -->
+<section class="page cover back nonum">
+  <div class="grid"></div><div class="glow" style="right:auto;left:-2in;top:-2in"></div><div class="glow2" style="left:auto;right:-1.6in"></div>
+  <div class="blurb">
+    <h2>Everyone says "learn tech".<br>Nobody says where to begin.</h2>
+    <p>Software or design? Data or security? Cloud, networking, AI? To a beginner, every path looks the same — equally exciting, equally impossible. So most people never start.</p>
+    <p>This book is the map that was missing. In plain English, it walks you through the nine major fields of technology: what each one really is, what the work looks like day to day, which tools and languages matter, whether it fits your personality, and exactly how to take your first steps. It ends with a side-by-side comparison, a self-check to find your fit, and a 30-day plan you can start tonight.</p>
+    <p>You do not need a degree, a powerful laptop, or a head for maths. You need a starting point. This is it.</p>
+  </div>
+  <div class="services">
+    <div><b>We Train</b>Beginner mentorship in UI/UX, web development, data, networking, hardware, and more.</div>
+    <div><b>We Mentor</b>Structured roadmaps, real projects, and someone to walk beside you.</div>
+    <div><b>We Build</b>Websites, mobile and web apps, APIs, data and IT solutions for businesses and startups.</div>
+    <div><b>We Launch</b>Your idea, turned into a working digital product. Tell us what you have in mind.</div>
+  </div>
+  <div class="contact">
+    <div class="c"><b>MentorK.Tech</b><a href="https://mentork-tech-website.vercel.app" style="color:#fff;font-weight:500">mentork-tech-website.vercel.app</a><br>WhatsApp: +234 705 777 9214 · +234 704 797 2890<br><span style="color:#9FB0D0;font-size:8pt;letter-spacing:.08em;text-transform:uppercase">We Train. We Mentor. We Build Futures.</span></div>
+    <img src="assets/book/logo-dark.jpg" alt="MK">
+  </div>
+</section>
+
+<script>
+  // --- Auto-paginate flowing pages -------------------------------------
+  // Body pages (not covers, part openers, chapter openers, contents, or the
+  // founder page) are "flows": their children are poured into as many 6x9
+  // pages as needed. Children (paragraphs, tables, boxes, stages, lists) are
+  // never split; a heading is never left alone at the bottom of a page.
+  const KEEP_WITH_NEXT = new Set(['H2','H3','H4']);
+  const isFlow = p => !p.matches('.nonum, .opener, .founder, .toc-page');
+  const fits = c => c.scrollHeight <= c.clientHeight + 1;
+  const makePage = src => {
+    const pg = document.createElement('section');
+    pg.className = src.className;
+    const c = document.createElement('div'); c.className = 'content';
+    pg.appendChild(c);
+    const f = src.querySelector('footer');
+    if (f) pg.appendChild(f.cloneNode(true));
+    return pg;
+  };
+
+  // Tables and plain lists may be split across pages; a split table repeats its header row.
+  const SPLITTABLE = el => el.matches('table, ul:not(.check), ol:not(.steps)');
+  const splitTail = el => {
+    if (el.tagName === 'TABLE') {
+      const rows = [...el.querySelectorAll('tr')];
+      if (rows.length < 3) return null;
+      const tail = el.cloneNode(false);
+      tail.appendChild(rows[0].cloneNode(true));   // header
+      tail.appendChild(rows[rows.length - 1]);
+      return tail;
+    }
+    const items = [...el.children];
+    if (items.length < 2) return null;
+    const tail = el.cloneNode(false);
+    tail.appendChild(items[items.length - 1]);
+    if (el.tagName === 'OL') tail.setAttribute('start', items.length);
+    return tail;
+  };
+
+  [...document.querySelectorAll('.page')].filter(isFlow).forEach(src => {
+    const content = src.querySelector('.content');
+    if (!content) return;
+    const items = [...content.children];
+    content.innerHTML = '';
+    let c = content, prev = src;
+    const newPage = () => { const np = makePage(src); prev.after(np); prev = np; c = np.querySelector('.content'); };
+    const queue = items;
+    while (queue.length) {
+      const el = queue.shift();
+      c.appendChild(el);
+      if (fits(c)) continue;
+      // Try to keep the first part of a table/list on this page and push the rest.
+      if (SPLITTABLE(el)) {
+        let tail = null;
+        while (!fits(c)) {
+          const piece = splitTail(el);
+          if (!piece) break;
+          if (!tail) tail = piece; else { const last = piece.children[piece.children.length - 1]; tail.insertBefore(last, tail.children[el.tagName === 'TABLE' ? 1 : 0]); if (el.tagName === 'OL') tail.setAttribute('start', el.children.length + 1); }
+        }
+        const kept = el.tagName === 'TABLE' ? el.querySelectorAll('tr').length - 1 : el.children.length;
+        if (fits(c) && kept >= 2 && tail) { queue.unshift(tail); continue; }
+        // Not worth splitting: restore rows and move whole element.
+        if (tail) {
+          const parts = [...tail.children];
+          if (el.tagName === 'TABLE') parts.shift();
+          parts.forEach(x => el.appendChild(x));
+        }
+      }
+      c.removeChild(el);
+      const carry = [];
+      while (c.lastElementChild && KEEP_WITH_NEXT.has(c.lastElementChild.tagName)) carry.unshift(c.removeChild(c.lastElementChild));
+      if (c.children.length === 0) { carry.forEach(x => { x.style.marginTop = '0'; c.appendChild(x); }); c.appendChild(el); continue; } // taller than a page; flagged below
+      newPage();
+      carry.forEach(x => { x.style.marginTop = '0'; c.appendChild(x); });
+      if (carry.length === 0 && el.matches('h3,h4')) el.style.marginTop = '0';
+      c.appendChild(el);
+    }
+  });
+
+  // --- Number pages and fill the contents page -------------------------
+  let n = 0;
+  document.querySelectorAll('.page').forEach(p => {
+    if (p.classList.contains('nonum')) return;
+    n += 1;
+    const el = p.querySelector('footer .num');
+    if (el) el.textContent = n;
+    p.dataset.num = n;
+  });
+  document.querySelectorAll('.toc .pg').forEach(s => {
+    const target = document.getElementById(s.dataset.for);
+    if (target) s.textContent = target.dataset.num || '';
+  });
+  // --- Flag anything that still overflows (checked during build) --------
+  document.querySelectorAll('.page .content').forEach(c => {
+    if (c.scrollHeight > c.clientHeight + 1) {
+      c.parentElement.classList.add('overflow');
+      c.parentElement.dataset.overflow = (c.scrollHeight - c.clientHeight) + 'px';
+    }
+  });
+  document.body.dataset.pages = document.querySelectorAll('.page').length;
+</script>
+</div>
+<script>
+  // Scale the fixed 6in pages down to fit narrow screens (runs after pagination).
+  (function(){
+    const book=document.getElementById('book');
+    const fit=()=>{const s=Math.min(1,(window.innerWidth-24)/576);book.style.zoom=s;};
+    fit(); window.addEventListener('resize',fit);
+  })();
+</script>
+</body>
+</html>

@@ -7,10 +7,11 @@ Pages:
 - services.html
 - portfolio.html
 - contact.html
+- books.html (MK-BOOKS — Beginner Series, PDF in assets/books)
 
 Contact:
 WhatsApp: 07057779214
 Phone: 07047972890
 Email: mentorktech@gmail.com
 
-Replace concept portfolio cards with real project screenshots/details as your portfolio grows.
+Portfolio thumbnails live in assets/portfolio (960x600 JPG screenshots); update them when a project changes.
