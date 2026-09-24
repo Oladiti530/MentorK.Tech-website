@@ -91,9 +91,12 @@ a.portfolio-card,a.project-card{display:block;color:inherit}
 @media(max-width:700px){.included-list,.tracks,.train-format{grid-template-columns:1fr}.page-hero .hero-actions{flex-direction:column;align-items:stretch}}
 
 /* Theme toggle */
-.theme-toggle{width:40px;height:40px;flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:50%;cursor:pointer;display:grid;place-items:center;font-size:15px;line-height:1;transition:.25s;padding:0}
-.theme-toggle:hover{border-color:var(--blue);color:var(--blue)}
+.theme-toggle{width:38px;height:38px;flex:none;border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:50%;cursor:pointer;display:grid;place-items:center;line-height:0;transition:background .2s,color .2s,border-color .2s;padding:0;-webkit-appearance:none;appearance:none}
+.theme-toggle:hover{background:var(--tint);color:var(--ink);border-color:var(--line)}
+.theme-toggle:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.theme-toggle svg{width:16px;height:16px}
 .theme-toggle svg{display:block}
+.theme-toggle .sun,.theme-toggle .moon{grid-area:1/1}
 .theme-toggle .sun{display:none!important}
 :root[data-theme="dark"] .theme-toggle .sun{display:block!important}
 :root[data-theme="dark"] .theme-toggle .moon{display:none}
