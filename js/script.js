@@ -12,6 +12,14 @@ document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',(
  document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
  const filter=btn.dataset.filter;
  document.querySelectorAll('.portfolio-card').forEach(card=>card.classList.toggle('hide',filter!=='all'&&card.dataset.category!==filter));
+ // A group whose cards are all filtered out should take its heading with it.
+ let shown=0;
+ document.querySelectorAll('.pgroup').forEach(group=>{
+  const visible=group.querySelectorAll('.portfolio-card:not(.hide)').length;
+  group.hidden=visible===0; shown+=visible;
+ });
+ const empty=document.querySelector('.filter-empty');
+ if(empty)empty.hidden=shown>0;
 }));
 
 document.querySelectorAll('.faq button').forEach(btn=>btn.addEventListener('click',()=>{
@@ -36,3 +44,20 @@ form?.addEventListener('submit',e=>{
  status.textContent='Opening WhatsApp with your project message...';
  window.open(`https://wa.me/2347057779214?text=${text}`,'_blank','noopener');
 });
+
+// Theme: remembers the visitor's choice, otherwise follows the system setting.
+(function(){
+ const root=document.documentElement;
+ const stored=(()=>{try{return localStorage.getItem('mk-theme')}catch(e){return null}})();
+ if(stored==='dark'||stored==='light')root.setAttribute('data-theme',stored);
+ const isDark=()=>root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+ document.querySelectorAll('.theme-toggle').forEach(btn=>{
+  btn.setAttribute('aria-pressed',isDark());
+  btn.addEventListener('click',()=>{
+   const next=isDark()?'light':'dark';
+   root.setAttribute('data-theme',next);
+   try{localStorage.setItem('mk-theme',next)}catch(e){}
+   document.querySelectorAll('.theme-toggle').forEach(b=>b.setAttribute('aria-pressed',next==='dark'));
+  });
+ });
+})();
