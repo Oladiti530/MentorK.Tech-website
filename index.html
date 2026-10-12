@@ -135,28 +135,40 @@
   <button class="top-button" aria-label="Back to top">↑</button>
   <script src="js/script.js?v=20260924"> </script>
   
+<!-- HOME PAGE PROTECTION - Put before </body> -->
 <script type="module">
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 const supabase = createClient("https://kluyudkqqbvzzwzqzotg.supabase.co", "sb_publishable_GRnYHdZ7fSZaI8O9_CFGgA_MrFoa1ov");
 
-async function check(){
-  const {data:{session}} = await supabase.auth.getSession();
-  const headerLogin = document.querySelector('a[href*="login"]');
-  if(!headerLogin) return;
-  if(session){
-    const email = session.user.email;
-    headerLogin.outerHTML = `<div style="display:flex;align-items:center;gap:8px"><span style="font-size:14px;font-weight:600">Hi, ${email.split('@')[0]}</span><button id="logoutBtn" style="background:#ef4444;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer;font-weight:bold">Logout</button></div>`;
-    document.getElementById("logoutBtn").onclick = async ()=>{ await supabase.auth.signOut(); location.reload(); };
+async function initHome(){
+  const { data:{session} } = await supabase.auth.getSession();
+  const lockedPages = ["about.html","contact.html","services.html","courses.html","course.html"];
+
+  if(!session){
+    // Not logged in - block clicks to other pages
+    document.querySelectorAll('a').forEach(link=>{
+      const href = link.getAttribute('href') || "";
+      if(lockedPages.some(page => href.includes(page))){
+        link.addEventListener('click', (e)=>{
+          e.preventDefault();
+          window.location.href = "login.html";
+        });
+      }
+    });
+  } else {
+    // Logged in - show Logout button
+    const loginLink = document.querySelector('a[href*="login"]');
+    if(loginLink){
+      loginLink.outerHTML = `<button id="logoutBtn" style="background:#ef4444;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer;font-weight:bold">Logout</button>`;
+      document.getElementById("logoutBtn").onclick = async ()=>{
+        await supabase.auth.signOut();
+        location.href = "index.html";
+      };
+    }
   }
 }
-check();
+initHome();
 </script>
-
-</body>
-</html>
-
-</body>
-</html>
  
 </body>
 </html>
