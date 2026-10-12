@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
+
+<head>
+<script type="module">
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+const supabase = createClient("https://kluyudkqqbvzzwzqzotg.supabase.co", "sb_publishable_GRnYHdZ7fSZaI8O9_CFGgA_MrFoa1ov");
+const { data:{session} } = await supabase.auth.getSession();
+if(!session){ window.location.href = "login.html"; }
+</script>
+  
 <meta charset="utf-8">
 <title>Where Do I Start? | MK-BOOKS · MentorK.Tech</title>
 <meta name="description" content="MK-BOOKS Book One: Where Do I Start? — a beginner's guide to finding your place in tech, by MentorK.Tech. Read it free online or download the PDF.">
