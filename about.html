@@ -1,5 +1,13 @@
 <!doctype html>
-<html lang="en"><head>
+<html lang="en">
+<head>
+<script type="module">
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+const supabase = createClient("https://kluyudkqqbvzzwzqzotg.supabase.co", "sb_publishable_GRnYHdZ7fSZaI8O9_CFGgA_MrFoa1ov");
+const { data:{session} } = await supabase.auth.getSession();
+if(!session){ window.location.href = "login.html"; }
+</script>
+  
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About | MentorK.Tech</title><meta name="description" content="About MentorK.Tech — we train, we mentor, we build. Meet the founder, Oladiti Kunle B.E (MentorK), and learn how the company trains beginners and builds digital solutions for businesses.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css?v=20260924"><script>(function(){try{var t=localStorage.getItem("mk-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script></head>
