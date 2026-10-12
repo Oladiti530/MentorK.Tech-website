@@ -135,23 +135,28 @@
   <button class="top-button" aria-label="Back to top">↑</button>
   <script src="js/script.js?v=20260924"> </script>
   
-  <script type="module">
+<script type="module">
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 const supabase = createClient("https://kluyudkqqbvzzwzqzotg.supabase.co", "sb_publishable_GRnYHdZ7fSZaI8O9_CFGgA_MrFoa1ov");
-const loginBtn = document.querySelector('a[href="login.html"]') || document.querySelector('button:contains("Login")') || document.querySelectorAll('a')[6];
+
 async function check(){
   const {data:{session}} = await supabase.auth.getSession();
   const headerLogin = document.querySelector('a[href*="login"]');
   if(!headerLogin) return;
   if(session){
     const email = session.user.email;
-    headerLogin.outerHTML = `<div style="display:flex;align-items:center;gap:8px"><span style="font-size:14px;font-weight:600">Hi, ${email.split('@')[0]}</span><button id="logoutBtn" style="background:#ef4444;color:white;padding:5px 12px;border-radius:5px;border:none;cursor:pointer;font-weight:bold">Logout</button></div>`;
+    headerLogin.outerHTML = `<div style="display:flex;align-items:center;gap:8px"><span style="font-size:14px;font-weight:600">Hi, ${email.split('@')[0]}</span><button id="logoutBtn" style="background:#ef4444;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer;font-weight:bold">Logout</button></div>`;
     document.getElementById("logoutBtn").onclick = async ()=>{ await supabase.auth.signOut(); location.reload(); };
   }
 }
 check();
-supabase.auth.onAuthStateChange(()=>check());
 </script>
+
+</body>
+</html>
+
+</body>
+</html>
  
 </body>
 </html>
