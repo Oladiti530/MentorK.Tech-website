@@ -133,23 +133,25 @@
 
   <footer class="footer"><div class="container footer-grid"><div><a class="brand footer-brand" href="/"><img src="assets/logo/mentork-mark.png" alt=""><span>MentorK<span>.Tech</span></span></a><p>Building modern digital experiences that help businesses grow.</p></div><div><h4>Explore</h4><a href="/about">About</a><a href="/services">Services</a><a href="/portfolio">Portfolio</a><a href="/books">MK-BOOKS</a><a href="/contact">Contact</a></div><div><h4>Contact</h4><a href="https://wa.me/2347057779214">WhatsApp</a><a href="tel:+2347047972890">07047972890</a><a href="mailto:mentorktech@gmail.com">mentorktech@gmail.com</a></div><div><h4>Let's connect</h4><p>Have a project in mind?</p><a class="footer-cta" href="/contact">Start a conversation →</a></div></div><div class="container footer-bottom"><span>© 2026 MentorK.Tech. All rights reserved.</span><span>MentorK — Innovate • Build • Empower</span></div></footer>
   <button class="top-button" aria-label="Back to top">↑</button>
-  <script src="js/script.js?v=20260924">
+  <script src="js/script.js?v=20260924"> </script>
+  
+  <script type="module">
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 const supabase = createClient("https://kluyudkqqbvzzwzqzotg.supabase.co", "sb_publishable_GRnYHdZ7fSZaI8O9_CFGgA_MrFoa1ov");
-
-async function updateHeader(){
-  const { data } = await supabase.auth.getUser();
-  const user = data.user;
-  const el = document.getElementById("authArea");
-  if(!el) return;
-  if(user){
-    el.innerHTML = `<span style="margin-right:10px;font-weight:bold">Hi, ${user.email.split('@')[0]}</span><button id="logoutBtn" style="background:#ef4444;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer">Logout</button>`;
-    document.getElementById("logoutBtn").onclick = async () => { await supabase.auth.signOut(); location.reload(); };
-  } else {
-    el.innerHTML = `<a href="login.html" style="background:#2563eb;color:white;padding:8px 16px;border-radius:8px;text-decoration:none">Login</a>`;
+const loginBtn = document.querySelector('a[href="login.html"]') || document.querySelector('button:contains("Login")') || document.querySelectorAll('a')[6];
+async function check(){
+  const {data:{session}} = await supabase.auth.getSession();
+  const headerLogin = document.querySelector('a[href*="login"]');
+  if(!headerLogin) return;
+  if(session){
+    const email = session.user.email;
+    headerLogin.outerHTML = `<div style="display:flex;align-items:center;gap:8px"><span style="font-size:14px;font-weight:600">Hi, ${email.split('@')[0]}</span><button id="logoutBtn" style="background:#ef4444;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer;font-weight:bold">Logout</button></div>`;
+    document.getElementById("logoutBtn").onclick = async ()=>{ await supabase.auth.signOut(); location.reload(); };
   }
 }
-updateHeader();
-  </script>
+check();
+supabase.auth.onAuthStateChange(()=>check());
+</script>
+ 
 </body>
 </html>
